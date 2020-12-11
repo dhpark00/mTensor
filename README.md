@@ -6,7 +6,7 @@ Wolfram Engine과 C++로 구현한 인덱스 텐서 연산
 
 1. `Free Wolfram Engine for Developers` 다운로드 및 설치
 
-    * [Wolfram Engine](https://www.wolfram.com/engine/)에서 다운로드
+    * [https://www.wolfram.com/engine/](https://www.wolfram.com/engine/)에서 다운로드
     * 적당한 폴더에 설치. 활성화를 위해 Wolfram ID 필요
 
 2. 주피터 노트북 설치 ([아타콘다 파이썬](https://www.anaconda.com/products/individual) 추천)
