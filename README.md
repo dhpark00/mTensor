@@ -13,8 +13,7 @@ Wolfram Engine과 C++로 구현한 인덱스 텐서 연산
 
 3. 주피터 노트북을 위한 Wolfram Language kernel 설치
 
-    * [WolframLanguageForJupyter](https://github.com/WolframResearch/WolframLanguageForJupyter)
-    * 저장소 전체 압축을 다운로드
+    * [저장소](https://github.com/WolframResearch/WolframLanguageForJupyter) 전체 압축을 다운로드
     * 압축을 푼 폴더에서 `.\configure-jupyter.wls add` 실행
 
 # mTensor 설치
