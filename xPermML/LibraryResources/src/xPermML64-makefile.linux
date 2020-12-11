@@ -1,0 +1,21 @@
+MLINKDIR = /home/dhpark/pwb/mma/SystemFiles/Links/MathLink/DeveloperKit
+SYS = Linux-x86-64
+CADDSDIR = ${MLINKDIR}/${SYS}/CompilerAdditions
+
+MLLIBS = -L${CADDSDIR} -lML64i4  -lm -lpthread -lrt -lstdc++ -ldl -luuid
+MPREP = ${CADDSDIR}/mprep
+MCC = ${CADDSDIR}/mcc
+
+INCLUDES = -I${CADDSDIR}
+
+all: xPermML64.linux
+
+xPermML64.linux: xPermML64tm.o
+	g++ -O2 -m64 xPermML64tm.o ${INCLUDES} ${MLLIBS} -o xPermML64.linux
+
+xPermML64tm.o: xPermML.tm
+	${MPREP} xPermML.tm -o xPermML64tm.cpp
+	g++ -m64 ${INCLUDES} -std=c++17 -c xPermML64tm.cpp
+
+clean :
+	rm -f xPermML64tm.*
