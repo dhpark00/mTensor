@@ -19,4 +19,3 @@ Wolfram Engine과 C++로 구현한 인덱스 텐서 연산
 # mTensor 설치
 
 mTensor.zip을 <Wolfram Engine 설치 폴더>/AddOns/Applications/mTensor에 풀기
-(또는 <Wolfram Engine 설치 폴더>/Configuration/Kernel/init.m에 압축을 푼 폴더를 $Path로 등록)
