@@ -4,6 +4,8 @@ Wolfram Engine과 C++로 구현한 인덱스 텐서 연산
 
 # 사전 준비
 
+이미 *Mathematica*가 설치되어 있다면 아래의 사전 준비는 필요 없고, 주피터 노트북보다는 *Mathematica* 노트북 사용을 **추천**.
+
 1. `Free Wolfram Engine for Developers` 다운로드 및 설치
 
     * [https://www.wolfram.com/engine/](https://www.wolfram.com/engine/)에서 다운로드
