@@ -638,9 +638,15 @@ Tdefine[oName_Symbol,                permS_String] := Tdefine[oName, ToString @ 
 Tdefine[oName_Symbol, prtStr_String, permS_String] := Tdefine[oName, prtStr,           permS, DefaultKind]
 
 Tdefine[oName_Symbol,                permS_String, kind_Symbol] := Tdefine[oName, ToString @ oName, permS, kind]
+Tdefine[oName_Symbol,                permS_String, kindL_List]  := Tdefine[oName, ToString @ oName, permS, kindL]
 Tdefine[oName_Symbol, prtStr_String, permS_String, kind_Symbol] := (
         If [checkName[oName],
             defineOperand[oName, prtStr, permS, {kind}, If [permS === "", {}, {-1}]]
+        ];
+    )
+Tdefine[oName_Symbol, prtStr_String, permS_String, kindL_List]  := (
+        If [checkName[oName],
+            defineOperand[oName, prtStr, permS, kindL, If [permS === "", {}, {-1}]]
         ];
     )
 
@@ -667,11 +673,13 @@ Tdefine[oName_Symbol[shape_Symbol], prtStr_String, permS_String] := (
     ) /; permS =!= ""
 
 (* finite-rank and no-symmetric, various shapes *)
-Tdefine[oName_Symbol[shapes:((_Symbol)..)]] := Tdefine[oName[shapes], StringJoin @ Take[Alphabet[], Length @ {shapes}]]
+Tdefine[oName_Symbol[shapes:((_Symbol)..)]]                         := Tdefine[oName[shapes], StringJoin @ Take[Alphabet[], Length @ {shapes}]]
 
 (* finite-rank and any symmetric, various shapes *)
-Tdefine[oName_Symbol[shapes:((_Symbol)..)],                permS_String] := Tdefine[oName[shapes], ToString @ oName, permS] /; permS =!= ""
-Tdefine[oName_Symbol[shapes:((_Symbol)..)], prtStr_String, permS_String] := (
+Tdefine[oName_Symbol[shapes:((_Symbol)..)],                nRank_Integer?Positive] := Tdefine[oName[shapes], ToString @ nRank]
+Tdefine[oName_Symbol[shapes:((_Symbol)..)],                permS_String]           := Tdefine[oName[shapes], ToString @ oName, permS] /; permS =!= ""
+Tdefine[oName_Symbol[shapes:((_Symbol)..)], prtStr_String, nRank_Integer?Positive] := Tdefine[oName[shapes], prtStr, ToString @ nRank]
+Tdefine[oName_Symbol[shapes:((_Symbol)..)], prtStr_String, permS_String]           := (
 	   If [checkName[oName],
 	       defineOperand[oName, prtStr, permS, indexKind /@ {shapes}, dnupState /@ {shapes}]
 	   ];

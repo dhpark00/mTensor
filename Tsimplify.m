@@ -531,8 +531,11 @@ On[Symbol::symname];
             contL = Cases[{rc}, TensorContract[_, cts_]:> cts, Infinity];
             If [contL =!= {},
                 For [i = 1, i <= Length[contL[[1]]], ++i,
-                    dumpairL = DummyPair @ indexKind @ pairL[[i,1]];  (* fresh dummy pair *)
+                    (* dummy pair for the kind of the contracted index *)
+                    dumpairL = DummyPair @ indexKind @ indexL[[ contL[[1,i,1]] ]];
+
                     moveQ = AllTrue[(#[[3]]& /@ mStateL)[[ contL[[1,i]] ]], (# === +1)&];
+
                     (* If moveQ, {dn, up}        : A[la,ub] CD[lc, S[ua,lb]] => A[lp,lq] CD[lc, S[up,uq]].
                        Otherwise, original dn/up : A[la,ub] BD[lc, S[ua,lb]] => A[lp,uq] BD[lc, S[up,lq]] *)
                     idxL[[ contL[[1,i]] ]] = If [moveQ || DnIndexQ[pairL[[i,1]]], dumpairL, dumpairL[[{2,1}]]]

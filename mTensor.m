@@ -235,6 +235,8 @@ DegreeForm::usage  = "DegreeForm[expr]"
 ZeroDegreeQ::usage = "ZeroDegreeQ[expr]"
 ToTensor::usage    = "ToTensor[expr, <indexL>]"
 
+CoordRep::usage = ""
+
 (**************************** Variation *****************************)
 
 VD::usage = "VD[arg, expr]"

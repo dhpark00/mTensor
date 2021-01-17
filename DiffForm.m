@@ -425,6 +425,46 @@ ToTensor[___] := Message[ToTensor::usage]
         ]
     f2tObject[expr_, _, _] := expr
 
+(***** CoordRep *****)
+
+CoordRep[form_, coSys_List] :=
+    With[{p = DegreeForm[form], n = Length[coSys]},
+        If [p == 0 || n == 0, form, coordRep[form, p, n, coSys]]
+    ]
+
+CoordRep[form_, n_:GetDimension[Latin]] :=
+    With[{p = DegreeForm[form]},
+        If [p == 0,
+            form,
+        (* else *)
+            If [!PositiveIntegerQ[n],
+                Message[Msg::err, "Dimension", n, "is required to be a positive integer!", ""];
+                form,
+            (* else *)
+                coordRep[form, p, n]
+            ]
+        ]
+    ]
+
+    coordRep[form_, p_, n_, coSys_:{}] :=
+        Module[{pairL = Table[DummyPair[Latin], {p}], rc},
+            If [!IndexedFormQ[coordX],
+                (* Fdefine[coordX[ua], 0] *)
+                getDegree[coordX] ^= 0;
+                defineOperand[coordX, "x", "a", {Latin}, {1}, IndexedFormQ]
+            ];
+            
+            If [coSys === {},
+                clearComponents[coordX, 1, {n}, {+1}],
+            (* else *)
+                (* SetComponents[coordX[ua], coSys] *)
+                tableToComponents[coordX, 1, {+1}, coSys]
+            ];
+
+            rc = (1/p!) ToTensor[form, #[[1]]& /@ pairL] ( XP @@ (XD /@ coordX /@ (#[[2]]& /@ pairL)) );
+            CollectForm @ TindexSort @ (SumDum[{1, n}, rc, Latin])
+        ]
+
 Unprotect[Off]  (* turn off a flag *)
 Off[XDtoCDfrag] := (flagTable[XDtoCDfrag] = False;)
 Protect[Off]

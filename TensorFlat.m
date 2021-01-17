@@ -52,12 +52,10 @@ MakeConstantMetric[arg_List, coSys_?VectorQ, kind_Symbol] :=
         If [!MetricSpaceQ[kind], Message[Msg::err, kind, "is not a metric space.", "", ""]; Return[]];
         If [!CoordinateBasisQ[kind], Message[Msg::err, kind, "is not in coordinate basis.", "", ""]; Return[]];
         If [n =!= Length[coSys], Message[Msg::err, "incompatible arguments:", vec, "and", coSys]; Return[]];
-        If [PositiveIntegerQ[GetDimension[kind]] && n =!= GetDimension[kind],
-            Message[Msg::err, "incompatible argument:", vec, "and the dimension:", GetDimension[kind]]; Return[]
-        ];
+
+        GetDimension[kind] = n;
 
         constantMetricQ[kind] = True;
-
         SetCoordinates[coSys, kind];
 
         (* m + p = n, -m + p = s *)
