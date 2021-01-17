@@ -174,9 +174,9 @@ CanonicalPerm[s_. * imag_Imag, len_, GS_GenSet, frees_List, sets:{(_DummySet | _
 $MyDevDirectory =
     With [{version = System`$Version},
         Which [
-            StringMatchQ[version, "*Windows*"], "c:/Dropbox/pwb/jupyter_notebook",
-            StringMatchQ[version, "*Linux*"],   "/home/dhpark/Dropbox/pwb/jupyter_notebook",
-            StringMatchQ[version, "*Mac*"],     "/Users/dhpark/Dropbox/pwb/jupyter_notebook"
+            StringMatchQ[version, "*Windows*"], "c:/Dropbox/mma",
+            StringMatchQ[version, "*Linux*"],   "/home/dhpark/Dropbox/mma",
+            StringMatchQ[version, "*Mac*"],     "/Users/dhpark/Dropbox/mma"
         ]
     ]
 
