@@ -1,6 +1,6 @@
 # mTensor
 
-Wolfram Engine과 C++로 구현한 인덱스 텐서 연산
+Wolfram Engine과 C++로 구현한 인덱스를 갖는 텐서의 다양한 연산
 
 # 사전 준비
 
