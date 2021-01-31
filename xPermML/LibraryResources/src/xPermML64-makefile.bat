@@ -2,8 +2,10 @@
 REM *** VS2019 x64 native commandline tools environment and MMA12 ***
 REM OPEN "x64 Native Tools Command Prompt"
 
-SET MMA=c:\Mathematica12
-SET CompAdd=%MMA%\SystemFiles\Links\MathLink\DeveloperKit\Windows-x86-64\CompilerAdditions
+# my personal dir of Wolfram Engine
+SET MY_MMA_DIR=c:\Mathematica12
+
+SET CompAdd=%MY_MMA_DIR%\SystemFiles\Links\MathLink\DeveloperKit\Windows-x86-64\CompilerAdditions
 SET MPREP=%CompAdd%\mprep.exe
 
 SET CL=/nologo /c /DWIN32 /D_WINDOWS /W3 /O2 /DNDEBUG /EHsc
