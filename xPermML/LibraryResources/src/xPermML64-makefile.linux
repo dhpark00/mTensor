@@ -4,7 +4,7 @@
 # my personal dir of Wolfram Engine
 MY_MMA_DIR = /home/dhpark/pwb/mma
 
-MLINKDIR = $MY_MMA_DIR/SystemFiles/Links/MathLink/DeveloperKit
+MLINKDIR = ${MY_MMA_DIR}/SystemFiles/Links/MathLink/DeveloperKit
 SYS = Linux-x86-64
 CADDSDIR = ${MLINKDIR}/${SYS}/CompilerAdditions
 
