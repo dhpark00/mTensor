@@ -2,7 +2,7 @@
 인덱스를 갖는 Symbolic 텐서의 여러 가지 연산
 
 ## 설치
-저장소 전체를 압축한 `mTensor-master.zip`을 `<Mathematica 설치 폴더>/AddOns/Applications/mTensor`에 푼다.
+저장소 전체를 압축한 `mTensor-main.zip`을 `<Mathematica 설치 폴더>/AddOns/Applications/mTensor`에 푼다.
 
 ## 사용
 Mathematica에서
