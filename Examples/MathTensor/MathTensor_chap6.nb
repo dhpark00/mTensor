@@ -1,0 +1,4999 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    181575,       4991]
+NotebookOptionsPosition[    167840,       4777]
+NotebookOutlinePosition[    168424,       4796]
+CellTagsIndexPosition[    168381,       4793]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"<<", "mTensor`"}]], "Input",
+ CellChangeTimes->{{3.7576559419599457`*^9, 3.757655945144128*^9}, {
+  3.776152368617609*^9, 3.7761523687740192`*^9}},
+ CellLabel->
+  "In[200]:=",ExpressionUUID->"bf7371f8-dc40-42da-adfa-c4c103b09334"],
+
+Cell[CellGroupData[{
+
+Cell["Chap. 6 Differential Form Applications", "Section",ExpressionUUID->"6f3e96e3-9ce9-4746-a98d-a5661afc131c"],
+
+Cell[CellGroupData[{
+
+Cell["6.1 The Theorem of Stokes", "Subsection",
+ CellChangeTimes->{{3.775021657992338*^9, 
+  3.775021669391649*^9}},ExpressionUUID->"8dc33e74-5cc7-4d56-88bf-\
+9548739f2598"],
+
+Cell[BoxData[
+ RowBox[{"Off", "[", "XDtoCDfrag", "]"}]], "Input",
+ CellChangeTimes->{{3.775021681349089*^9, 3.7750216878838344`*^9}},
+ CellLabel->
+  "In[201]:=",ExpressionUUID->"0a174b9c-1241-4f57-9795-5564688a4f2b"],
+
+Cell["2\:cc28\:c6d0 \:c2dc\:acf5\:ac04:", "Text",
+ CellChangeTimes->{
+  3.82703675512044*^9},ExpressionUUID->"a2fc8a0e-70a3-4d17-ad2f-afbcd3dd6a12"],
+
+Cell[BoxData[
+ RowBox[{"SetDimension", "[", "2", "]"}]], "Input",
+ CellChangeTimes->{{3.7750217373635654`*^9, 3.77502174677789*^9}, {
+  3.7750220464738493`*^9, 3.775022049969809*^9}},
+ CellLabel->
+  "In[202]:=",ExpressionUUID->"e117c5b6-31e4-4119-818c-d95f100a4bd1"],
+
+Cell[BoxData[
+ RowBox[{"Fdefine", "[", 
+  RowBox[{"w1", ",", "1"}], "]"}]], "Input",
+ CellChangeTimes->{{3.775021763260896*^9, 3.775021767882243*^9}},
+ CellLabel->
+  "In[203]:=",ExpressionUUID->"3c453c9c-a3a5-481b-ad9e-5b3e9d9ce9de"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{"w1", "\[IndentingNewLine]", 
+ RowBox[{"CoordRep", "[", 
+  RowBox[{"w1", ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.9159478614862537`*^9, 3.91594786532427*^9}},
+ CellLabel->
+  "In[204]:=",ExpressionUUID->"a92b24ea-fa2f-8c4f-b519-607b9216a199"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox["w1",
+   ShowAutoStyles->False,
+   AutoSpacing->False,
+   FontWeight->"Bold"],
+  $CellContext`w1,
+  Editable->False]], "Output",
+ CellChangeTimes->{3.915947866817892*^9, 3.918293873075302*^9},
+ CellLabel->
+  "Out[204]=",ExpressionUUID->"fba613d0-897f-6f44-94db-c5466dbe77b5"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["w1", 
+      TemplateBox[{1},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`w1[-1],
+    Editable->False], " ", 
+   InterpretationBox[
+    StyleBox[
+     TemplateBox[{
+       StyleBox["d", FontWeight -> "Bold"], 
+       TemplateBox[{"x"}, "RowDefault"]},
+      "RowDefault"],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    mTensor`XD[$CellContext`x],
+    Editable->False]}], "+", 
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["w1", 
+      TemplateBox[{2},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`w1[-2],
+    Editable->False], " ", 
+   InterpretationBox[
+    StyleBox[
+     TemplateBox[{
+       StyleBox["d", FontWeight -> "Bold"], 
+       TemplateBox[{"y"}, "RowDefault"]},
+      "RowDefault"],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    mTensor`XD[$CellContext`y],
+    Editable->False]}]}]], "Output",
+ CellChangeTimes->{3.915947866817892*^9, 3.918293873075302*^9},
+ CellLabel->
+  "Out[205]=",ExpressionUUID->"1853657a-8bff-f841-8f9f-6a3295d37177"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"XD", "[", "w1", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"CoordRep", "[", 
+  RowBox[{"%", ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.775021770579921*^9, 3.775021773761062*^9}, {
+  3.8191065714715614`*^9, 3.819106571722359*^9}, {3.9159478346996*^9, 
+  3.9159478350844193`*^9}},
+ CellLabel->
+  "In[206]:=",ExpressionUUID->"2e248bc1-6777-475c-8955-c806d28aa9b2"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   TemplateBox[{
+     StyleBox["d", FontWeight -> "Bold"], 
+     TemplateBox[{
+       InterpretationBox[
+        StyleBox[
+         StyleBox["w1", FontWeight -> "Bold"], AutoSpacing -> False, 
+         ShowAutoStyles -> False], 
+        $CellContext`w1[], Editable -> False]}, "RowDefault"]},
+    "RowDefault"],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  mTensor`XD[
+   $CellContext`w1[]],
+  Editable->False]], "Output",
+ CellChangeTimes->{3.7750217740887184`*^9, 3.775021816834603*^9, 
+  3.775021890189038*^9, 3.775022054313152*^9, 3.827036802476289*^9, 
+  3.915947835789802*^9, 3.918293880434227*^9},
+ CellLabel->
+  "Out[206]=",ExpressionUUID->"ebcb95b0-9b77-dc43-b082-629f5f50c04e"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"-", 
+     InterpretationBox[
+      StyleBox[
+       TemplateBox[{
+         SubscriptBox["\[PartialD]", 2], 
+         InterpretationBox[
+          StyleBox[
+           SubsuperscriptBox["w1", 
+            TemplateBox[{1}, "RowDefault"], 
+            TemplateBox[{
+              StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+             "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+          $CellContext`w1[-1], Editable -> False]},
+        "RowDefault"],
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      mTensor`BD[-2, 
+       $CellContext`w1[-1]],
+      Editable->False]}], "+", 
+    InterpretationBox[
+     StyleBox[
+      TemplateBox[{
+        SubscriptBox["\[PartialD]", 1], 
+        InterpretationBox[
+         StyleBox[
+          SubsuperscriptBox["w1", 
+           TemplateBox[{2}, "RowDefault"], 
+           TemplateBox[{
+             StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+            "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+         $CellContext`w1[-2], Editable -> False]},
+       "RowDefault"],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     mTensor`BD[-1, 
+      $CellContext`w1[-2]],
+     Editable->False]}], ")"}], " ", 
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      InterpretationBox[
+       StyleBox[
+        TemplateBox[{
+          StyleBox["d", FontWeight -> "Bold"], 
+          TemplateBox[{"x"}, "RowDefault"]}, "RowDefault"], AutoSpacing -> 
+        False, ShowAutoStyles -> False], 
+       mTensor`XD[$CellContext`x], Editable -> False], "\"\[Wedge]\"", 
+      InterpretationBox[
+       StyleBox[
+        TemplateBox[{
+          StyleBox["d", FontWeight -> "Bold"], 
+          TemplateBox[{"y"}, "RowDefault"]}, "RowDefault"], AutoSpacing -> 
+        False, ShowAutoStyles -> False], 
+       mTensor`XD[$CellContext`y], Editable -> False]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`XP[
+    mTensor`XD[$CellContext`x], 
+    mTensor`XD[$CellContext`y]],
+   Editable->False]}]], "Output",
+ CellChangeTimes->{3.7750217740887184`*^9, 3.775021816834603*^9, 
+  3.775021890189038*^9, 3.775022054313152*^9, 3.827036802476289*^9, 
+  3.915947835789802*^9, 3.918293880465824*^9},
+ CellLabel->
+  "Out[207]=",ExpressionUUID->"40e8e482-ac73-f641-bbd3-b5e9a903a258"]
+}, Open  ]],
+
+Cell["3\:cc28\:c6d0 \:c2dc\:acf5\:ac04:", "Text",
+ CellChangeTimes->{
+  3.827036844865374*^9},ExpressionUUID->"c183d911-5e48-493b-bde0-\
+9ec84b7782ee"],
+
+Cell[BoxData[
+ RowBox[{"SetDimension", "[", "3", "]"}]], "Input",
+ CellChangeTimes->{{3.775021979235462*^9, 3.775021988040866*^9}, {
+  3.775022067386472*^9, 3.775022069681285*^9}},
+ CellLabel->
+  "In[208]:=",ExpressionUUID->"9fadcf1d-32bf-4eb7-9e68-e2079751884b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{"w1", "\[IndentingNewLine]", 
+ RowBox[{"CoordRep", "[", 
+  RowBox[{"w1", ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.915947885526146*^9, 3.915947887388191*^9}},
+ CellLabel->
+  "In[209]:=",ExpressionUUID->"12506d6c-1b0e-e943-a8fb-b292af2144c5"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox["w1",
+   ShowAutoStyles->False,
+   AutoSpacing->False,
+   FontWeight->"Bold"],
+  $CellContext`w1,
+  Editable->False]], "Output",
+ CellChangeTimes->{3.915947888095852*^9, 3.9182938873829575`*^9},
+ CellLabel->
+  "Out[209]=",ExpressionUUID->"5430a1a0-bffa-9b4d-958d-a1d07bbf8142"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["w1", 
+      TemplateBox[{1},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`w1[-1],
+    Editable->False], " ", 
+   InterpretationBox[
+    StyleBox[
+     TemplateBox[{
+       StyleBox["d", FontWeight -> "Bold"], 
+       TemplateBox[{"x"}, "RowDefault"]},
+      "RowDefault"],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    mTensor`XD[$CellContext`x],
+    Editable->False]}], "+", 
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["w1", 
+      TemplateBox[{2},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`w1[-2],
+    Editable->False], " ", 
+   InterpretationBox[
+    StyleBox[
+     TemplateBox[{
+       StyleBox["d", FontWeight -> "Bold"], 
+       TemplateBox[{"y"}, "RowDefault"]},
+      "RowDefault"],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    mTensor`XD[$CellContext`y],
+    Editable->False]}], "+", 
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["w1", 
+      TemplateBox[{3},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`w1[-3],
+    Editable->False], " ", 
+   InterpretationBox[
+    StyleBox[
+     TemplateBox[{
+       StyleBox["d", FontWeight -> "Bold"], 
+       TemplateBox[{"z"}, "RowDefault"]},
+      "RowDefault"],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    mTensor`XD[$CellContext`z],
+    Editable->False]}]}]], "Output",
+ CellChangeTimes->{3.915947888095852*^9, 3.9182938873859673`*^9},
+ CellLabel->
+  "Out[210]=",ExpressionUUID->"dbbdd6fb-4259-294d-abb0-6cfd9b636438"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"XD", "[", "w1", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"CoordRep", "[", 
+  RowBox[{"%", ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.775022076187113*^9, 3.775022080161592*^9}, {
+  3.819106861267404*^9, 3.8191068614404087`*^9}, {3.9159478931232142`*^9, 
+  3.9159478934682016`*^9}},
+ CellLabel->
+  "In[211]:=",ExpressionUUID->"a7b2a1ac-e619-45e5-bdf2-646fb107499b"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   TemplateBox[{
+     StyleBox["d", FontWeight -> "Bold"], 
+     TemplateBox[{
+       InterpretationBox[
+        StyleBox[
+         StyleBox["w1", FontWeight -> "Bold"], AutoSpacing -> False, 
+         ShowAutoStyles -> False], 
+        $CellContext`w1[], Editable -> False]}, "RowDefault"]},
+    "RowDefault"],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  mTensor`XD[
+   $CellContext`w1[]],
+  Editable->False]], "Output",
+ CellChangeTimes->{3.775022080547157*^9, 3.827036853922714*^9, 
+  3.91594789387714*^9, 3.91829389061364*^9},
+ CellLabel->
+  "Out[211]=",ExpressionUUID->"0ee93319-ae5f-6f45-8017-1bfcda9feea6"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", 
+      InterpretationBox[
+       StyleBox[
+        TemplateBox[{
+          SubscriptBox["\[PartialD]", 2], 
+          InterpretationBox[
+           StyleBox[
+            SubsuperscriptBox["w1", 
+             TemplateBox[{1}, "RowDefault"], 
+             TemplateBox[{
+               StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+              "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+           $CellContext`w1[-1], Editable -> False]},
+         "RowDefault"],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       mTensor`BD[-2, 
+        $CellContext`w1[-1]],
+       Editable->False]}], "+", 
+     InterpretationBox[
+      StyleBox[
+       TemplateBox[{
+         SubscriptBox["\[PartialD]", 1], 
+         InterpretationBox[
+          StyleBox[
+           SubsuperscriptBox["w1", 
+            TemplateBox[{2}, "RowDefault"], 
+            TemplateBox[{
+              StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+             "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+          $CellContext`w1[-2], Editable -> False]},
+        "RowDefault"],
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      mTensor`BD[-1, 
+       $CellContext`w1[-2]],
+      Editable->False]}], ")"}], " ", 
+   InterpretationBox[
+    StyleBox[
+     TemplateBox[{
+       InterpretationBox[
+        StyleBox[
+         TemplateBox[{
+           StyleBox["d", FontWeight -> "Bold"], 
+           TemplateBox[{"x"}, "RowDefault"]}, "RowDefault"], AutoSpacing -> 
+         False, ShowAutoStyles -> False], 
+        mTensor`XD[$CellContext`x], Editable -> False], "\"\[Wedge]\"", 
+       InterpretationBox[
+        StyleBox[
+         TemplateBox[{
+           StyleBox["d", FontWeight -> "Bold"], 
+           TemplateBox[{"y"}, "RowDefault"]}, "RowDefault"], AutoSpacing -> 
+         False, ShowAutoStyles -> False], 
+        mTensor`XD[$CellContext`y], Editable -> False]},
+      "RowDefault"],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    mTensor`XP[
+     mTensor`XD[$CellContext`x], 
+     mTensor`XD[$CellContext`y]],
+    Editable->False]}], "+", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", 
+      InterpretationBox[
+       StyleBox[
+        TemplateBox[{
+          SubscriptBox["\[PartialD]", 3], 
+          InterpretationBox[
+           StyleBox[
+            SubsuperscriptBox["w1", 
+             TemplateBox[{1}, "RowDefault"], 
+             TemplateBox[{
+               StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+              "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+           $CellContext`w1[-1], Editable -> False]},
+         "RowDefault"],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       mTensor`BD[-3, 
+        $CellContext`w1[-1]],
+       Editable->False]}], "+", 
+     InterpretationBox[
+      StyleBox[
+       TemplateBox[{
+         SubscriptBox["\[PartialD]", 1], 
+         InterpretationBox[
+          StyleBox[
+           SubsuperscriptBox["w1", 
+            TemplateBox[{3}, "RowDefault"], 
+            TemplateBox[{
+              StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+             "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+          $CellContext`w1[-3], Editable -> False]},
+        "RowDefault"],
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      mTensor`BD[-1, 
+       $CellContext`w1[-3]],
+      Editable->False]}], ")"}], " ", 
+   InterpretationBox[
+    StyleBox[
+     TemplateBox[{
+       InterpretationBox[
+        StyleBox[
+         TemplateBox[{
+           StyleBox["d", FontWeight -> "Bold"], 
+           TemplateBox[{"x"}, "RowDefault"]}, "RowDefault"], AutoSpacing -> 
+         False, ShowAutoStyles -> False], 
+        mTensor`XD[$CellContext`x], Editable -> False], "\"\[Wedge]\"", 
+       InterpretationBox[
+        StyleBox[
+         TemplateBox[{
+           StyleBox["d", FontWeight -> "Bold"], 
+           TemplateBox[{"z"}, "RowDefault"]}, "RowDefault"], AutoSpacing -> 
+         False, ShowAutoStyles -> False], 
+        mTensor`XD[$CellContext`z], Editable -> False]},
+      "RowDefault"],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    mTensor`XP[
+     mTensor`XD[$CellContext`x], 
+     mTensor`XD[$CellContext`z]],
+    Editable->False]}], "+", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", 
+      InterpretationBox[
+       StyleBox[
+        TemplateBox[{
+          SubscriptBox["\[PartialD]", 3], 
+          InterpretationBox[
+           StyleBox[
+            SubsuperscriptBox["w1", 
+             TemplateBox[{2}, "RowDefault"], 
+             TemplateBox[{
+               StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+              "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+           $CellContext`w1[-2], Editable -> False]},
+         "RowDefault"],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       mTensor`BD[-3, 
+        $CellContext`w1[-2]],
+       Editable->False]}], "+", 
+     InterpretationBox[
+      StyleBox[
+       TemplateBox[{
+         SubscriptBox["\[PartialD]", 2], 
+         InterpretationBox[
+          StyleBox[
+           SubsuperscriptBox["w1", 
+            TemplateBox[{3}, "RowDefault"], 
+            TemplateBox[{
+              StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+             "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+          $CellContext`w1[-3], Editable -> False]},
+        "RowDefault"],
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      mTensor`BD[-2, 
+       $CellContext`w1[-3]],
+      Editable->False]}], ")"}], " ", 
+   InterpretationBox[
+    StyleBox[
+     TemplateBox[{
+       InterpretationBox[
+        StyleBox[
+         TemplateBox[{
+           StyleBox["d", FontWeight -> "Bold"], 
+           TemplateBox[{"y"}, "RowDefault"]}, "RowDefault"], AutoSpacing -> 
+         False, ShowAutoStyles -> False], 
+        mTensor`XD[$CellContext`y], Editable -> False], "\"\[Wedge]\"", 
+       InterpretationBox[
+        StyleBox[
+         TemplateBox[{
+           StyleBox["d", FontWeight -> "Bold"], 
+           TemplateBox[{"z"}, "RowDefault"]}, "RowDefault"], AutoSpacing -> 
+         False, ShowAutoStyles -> False], 
+        mTensor`XD[$CellContext`z], Editable -> False]},
+      "RowDefault"],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    mTensor`XP[
+     mTensor`XD[$CellContext`y], 
+     mTensor`XD[$CellContext`z]],
+    Editable->False]}]}]], "Output",
+ CellChangeTimes->{3.775022080547157*^9, 3.827036853922714*^9, 
+  3.91594789387714*^9, 3.918293890645069*^9},
+ CellLabel->
+  "Out[212]=",ExpressionUUID->"3951f4d5-cf6e-bd4e-8e4d-78f0357f6f4e"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"Fdefine", "[", 
+  RowBox[{"w2", ",", "2"}], "]"}]], "Input",
+ CellChangeTimes->{{3.775022134707546*^9, 3.775022140545528*^9}},
+ CellLabel->
+  "In[213]:=",ExpressionUUID->"dc9c8af2-3b88-48c5-a4f3-44aee1d0b355"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{"w2", "\[IndentingNewLine]", 
+ RowBox[{"CoordRep", "[", 
+  RowBox[{"w2", ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.915947924780924*^9, 3.915947926795978*^9}},
+ CellLabel->
+  "In[214]:=",ExpressionUUID->"d31e506c-dfdd-1b40-bc01-eaa9515240a8"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox["w2",
+   ShowAutoStyles->False,
+   AutoSpacing->False,
+   FontWeight->"Bold"],
+  $CellContext`w2,
+  Editable->False]], "Output",
+ CellChangeTimes->{3.9159479273971157`*^9, 3.918293896374201*^9},
+ CellLabel->
+  "Out[214]=",ExpressionUUID->"e1febabe-f919-e448-a889-693774853c0f"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["w2", 
+      TemplateBox[{1, 2},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`w2[-1, -2],
+    Editable->False], " ", 
+   InterpretationBox[
+    StyleBox[
+     TemplateBox[{
+       InterpretationBox[
+        StyleBox[
+         TemplateBox[{
+           StyleBox["d", FontWeight -> "Bold"], 
+           TemplateBox[{"x"}, "RowDefault"]}, "RowDefault"], AutoSpacing -> 
+         False, ShowAutoStyles -> False], 
+        mTensor`XD[$CellContext`x], Editable -> False], "\"\[Wedge]\"", 
+       InterpretationBox[
+        StyleBox[
+         TemplateBox[{
+           StyleBox["d", FontWeight -> "Bold"], 
+           TemplateBox[{"y"}, "RowDefault"]}, "RowDefault"], AutoSpacing -> 
+         False, ShowAutoStyles -> False], 
+        mTensor`XD[$CellContext`y], Editable -> False]},
+      "RowDefault"],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    mTensor`XP[
+     mTensor`XD[$CellContext`x], 
+     mTensor`XD[$CellContext`y]],
+    Editable->False]}], "+", 
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["w2", 
+      TemplateBox[{1, 3},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`w2[-1, -3],
+    Editable->False], " ", 
+   InterpretationBox[
+    StyleBox[
+     TemplateBox[{
+       InterpretationBox[
+        StyleBox[
+         TemplateBox[{
+           StyleBox["d", FontWeight -> "Bold"], 
+           TemplateBox[{"x"}, "RowDefault"]}, "RowDefault"], AutoSpacing -> 
+         False, ShowAutoStyles -> False], 
+        mTensor`XD[$CellContext`x], Editable -> False], "\"\[Wedge]\"", 
+       InterpretationBox[
+        StyleBox[
+         TemplateBox[{
+           StyleBox["d", FontWeight -> "Bold"], 
+           TemplateBox[{"z"}, "RowDefault"]}, "RowDefault"], AutoSpacing -> 
+         False, ShowAutoStyles -> False], 
+        mTensor`XD[$CellContext`z], Editable -> False]},
+      "RowDefault"],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    mTensor`XP[
+     mTensor`XD[$CellContext`x], 
+     mTensor`XD[$CellContext`z]],
+    Editable->False]}], "+", 
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["w2", 
+      TemplateBox[{2, 3},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`w2[-2, -3],
+    Editable->False], " ", 
+   InterpretationBox[
+    StyleBox[
+     TemplateBox[{
+       InterpretationBox[
+        StyleBox[
+         TemplateBox[{
+           StyleBox["d", FontWeight -> "Bold"], 
+           TemplateBox[{"y"}, "RowDefault"]}, "RowDefault"], AutoSpacing -> 
+         False, ShowAutoStyles -> False], 
+        mTensor`XD[$CellContext`y], Editable -> False], "\"\[Wedge]\"", 
+       InterpretationBox[
+        StyleBox[
+         TemplateBox[{
+           StyleBox["d", FontWeight -> "Bold"], 
+           TemplateBox[{"z"}, "RowDefault"]}, "RowDefault"], AutoSpacing -> 
+         False, ShowAutoStyles -> False], 
+        mTensor`XD[$CellContext`z], Editable -> False]},
+      "RowDefault"],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    mTensor`XP[
+     mTensor`XD[$CellContext`y], 
+     mTensor`XD[$CellContext`z]],
+    Editable->False]}]}]], "Output",
+ CellChangeTimes->{3.9159479273971157`*^9, 3.918293896417757*^9},
+ CellLabel->
+  "Out[215]=",ExpressionUUID->"e487611e-c585-1242-9405-d4886d25533e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"XD", "[", "w2", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"CoordRep", "[", 
+  RowBox[{"%", ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.775022143938594*^9, 3.7750221458818345`*^9}, {
+  3.819106976340294*^9, 3.8191069764965477`*^9}, {3.915947932674223*^9, 
+  3.915947933003889*^9}},
+ CellLabel->
+  "In[216]:=",ExpressionUUID->"217aac6b-6b05-494d-b1e4-b742fdfd3b26"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   TemplateBox[{
+     StyleBox["d", FontWeight -> "Bold"], 
+     TemplateBox[{
+       InterpretationBox[
+        StyleBox[
+         StyleBox["w2", FontWeight -> "Bold"], AutoSpacing -> False, 
+         ShowAutoStyles -> False], 
+        $CellContext`w2[], Editable -> False]}, "RowDefault"]},
+    "RowDefault"],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  mTensor`XD[
+   $CellContext`w2[]],
+  Editable->False]], "Output",
+ CellChangeTimes->{3.775022146289372*^9, 3.77502221577197*^9, 
+  3.827036893228019*^9, 3.915947933381637*^9, 3.9182938995775948`*^9},
+ CellLabel->
+  "Out[216]=",ExpressionUUID->"345dfd81-8112-5144-9a59-3ccced5f56b4"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{
+    InterpretationBox[
+     StyleBox[
+      TemplateBox[{
+        SubscriptBox["\[PartialD]", 3], 
+        InterpretationBox[
+         StyleBox[
+          SubsuperscriptBox["w2", 
+           TemplateBox[{1, 2}, "RowDefault"], 
+           TemplateBox[{
+             StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+             StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+            "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+         $CellContext`w2[-1, -2], Editable -> False]},
+       "RowDefault"],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     mTensor`BD[-3, 
+      $CellContext`w2[-1, -2]],
+     Editable->False], "-", 
+    InterpretationBox[
+     StyleBox[
+      TemplateBox[{
+        SubscriptBox["\[PartialD]", 2], 
+        InterpretationBox[
+         StyleBox[
+          SubsuperscriptBox["w2", 
+           TemplateBox[{1, 3}, "RowDefault"], 
+           TemplateBox[{
+             StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+             StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+            "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+         $CellContext`w2[-1, -3], Editable -> False]},
+       "RowDefault"],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     mTensor`BD[-2, 
+      $CellContext`w2[-1, -3]],
+     Editable->False], "+", 
+    InterpretationBox[
+     StyleBox[
+      TemplateBox[{
+        SubscriptBox["\[PartialD]", 1], 
+        InterpretationBox[
+         StyleBox[
+          SubsuperscriptBox["w2", 
+           TemplateBox[{2, 3}, "RowDefault"], 
+           TemplateBox[{
+             StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+             StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+            "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+         $CellContext`w2[-2, -3], Editable -> False]},
+       "RowDefault"],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     mTensor`BD[-1, 
+      $CellContext`w2[-2, -3]],
+     Editable->False]}], ")"}], " ", 
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      InterpretationBox[
+       StyleBox[
+        TemplateBox[{
+          StyleBox["d", FontWeight -> "Bold"], 
+          TemplateBox[{"x"}, "RowDefault"]}, "RowDefault"], AutoSpacing -> 
+        False, ShowAutoStyles -> False], 
+       mTensor`XD[$CellContext`x], Editable -> False], "\"\[Wedge]\"", 
+      InterpretationBox[
+       StyleBox[
+        TemplateBox[{
+          StyleBox["d", FontWeight -> "Bold"], 
+          TemplateBox[{"y"}, "RowDefault"]}, "RowDefault"], AutoSpacing -> 
+        False, ShowAutoStyles -> False], 
+       mTensor`XD[$CellContext`y], Editable -> False], "\"\[Wedge]\"", 
+      InterpretationBox[
+       StyleBox[
+        TemplateBox[{
+          StyleBox["d", FontWeight -> "Bold"], 
+          TemplateBox[{"z"}, "RowDefault"]}, "RowDefault"], AutoSpacing -> 
+        False, ShowAutoStyles -> False], 
+       mTensor`XD[$CellContext`z], Editable -> False]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`XP[
+    mTensor`XD[$CellContext`x], 
+    mTensor`XD[$CellContext`y], 
+    mTensor`XD[$CellContext`z]],
+   Editable->False]}]], "Output",
+ CellChangeTimes->{3.775022146289372*^9, 3.77502221577197*^9, 
+  3.827036893228019*^9, 3.915947933381637*^9, 3.918293899605068*^9},
+ CellLabel->
+  "Out[217]=",ExpressionUUID->"e16a353a-926f-104a-b49e-c10585748a47"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"On", "[", "XDtoCDfrag", "]"}]], "Input",
+ CellChangeTimes->{{3.827036918167592*^9, 3.8270369181832066`*^9}},
+ CellLabel->
+  "In[218]:=",ExpressionUUID->"022c8dbb-a281-4d5f-a428-2761f35063c7"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["6.2 Differential Forms and Maxwell\[CloseCurlyQuote]s Equations", \
+"Subsection",
+ CellChangeTimes->{{3.775022346600315*^9, 3.775022361353287*^9}, {
+  3.775039674413162*^9, 
+  3.7750396760518074`*^9}},ExpressionUUID->"c92c3210-5973-4f90-aa89-\
+4f5d2c445917"],
+
+Cell["IndexedTensor\:b97c \:c774\:c6a9\:d55c Maxwell \:bc29\:c815\:c2dd1:", \
+"Text",
+ CellChangeTimes->{
+  3.827046038788808*^9, {3.915947983338146*^9, 
+   3.9159479855938845`*^9}},ExpressionUUID->"f054c7ee-6be6-4ea3-94a7-\
+d6a5309b3835"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Tdefine", "[", 
+   RowBox[{"F", ",", "\"\<2-\>\""}], "]"}], ";", 
+  RowBox[{"Tdefine", "[", 
+   RowBox[{"J", ",", "1"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.775022407076517*^9, 3.775022430769871*^9}, 
+   3.827046054836978*^9},
+ CellLabel->
+  "In[219]:=",ExpressionUUID->"28c3bf5a-2459-4969-bc18-baaba642d828"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"maxwellEq", "=", 
+  RowBox[{
+   RowBox[{"CD", "[", 
+    RowBox[{"ub", ",", 
+     RowBox[{"F", "[", 
+      RowBox[{"la", ",", "lb"}], "]"}]}], "]"}], "-", 
+   RowBox[{
+    FractionBox["1", 
+     SuperscriptBox["c", "2"]], 
+    RowBox[{"J", "[", "la", "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.775022437899436*^9, 3.775022469345801*^9}},
+ CellLabel->
+  "In[220]:=",ExpressionUUID->"b013d2eb-aabf-4cc8-b145-b189a8bdfe40"],
+
+Cell[BoxData[
+ RowBox[{
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      SuperscriptBox["\[Del]", "b"], 
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox["F", 
+         TemplateBox[{"a", "b"}, "RowDefault"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+       $CellContext`F[$CellContext`la, $CellContext`lb], Editable -> False]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`CD[$CellContext`ub, 
+    $CellContext`F[$CellContext`la, $CellContext`lb]],
+   Editable->False], "-", 
+  FractionBox[
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["J", 
+      TemplateBox[{"a"},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`J[$CellContext`la],
+    Editable->False], 
+   SuperscriptBox["c", "2"]]}]], "Output",
+ CellChangeTimes->{3.7750224707701874`*^9, 3.775023032683837*^9, 
+  3.827046058278102*^9, 3.915947991628837*^9, 3.91829393149345*^9},
+ CellLabel->
+  "Out[220]=",ExpressionUUID->"ceff9a82-c7b0-eb48-bec0-365254cc0893"]
+}, Open  ]],
+
+Cell["\:bbf8\:bd84 \:d615\:c2dd\:c744 \:c774\:c6a9\:d55c Maxwell \:bc29\:c815\
+\:c2dd1:", "Text",
+ CellChangeTimes->{
+  3.8270460739285173`*^9, {3.915947966441839*^9, 
+   3.91594797385024*^9}},ExpressionUUID->"f3411794-eb7a-4dc8-82a4-\
+0c886af1ecf6"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Fdefine", "[", 
+   RowBox[{"f", ",", "2"}], "]"}], ";", 
+  RowBox[{"Fdefine", "[", 
+   RowBox[{"j", ",", "1"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.775022478829057*^9, 3.775022482569819*^9}, 
+   3.827046085126287*^9},
+ CellLabel->
+  "In[221]:=",ExpressionUUID->"e9d4f417-556e-469f-81d9-98382806d9ac"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"CoXD", "[", "f", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ToTensor", "[", 
+  RowBox[{"%", ",", 
+   RowBox[{"{", "la", "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.775022485853096*^9, 3.775022489337751*^9}, {
+  3.819154074240305*^9, 3.8191540744914513`*^9}, {3.9159479989617424`*^9, 
+  3.915947999330389*^9}},
+ CellLabel->
+  "In[222]:=",ExpressionUUID->"cd41753b-9b88-430e-82cd-baea1e2da472"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   TemplateBox[{
+     StyleBox["\[Delta]", FontWeight -> "Bold"], 
+     TemplateBox[{
+       InterpretationBox[
+        StyleBox[
+         StyleBox["f", FontWeight -> "Bold"], AutoSpacing -> False, 
+         ShowAutoStyles -> False], $CellContext`f, Editable -> False]}, 
+      "RowDefault"]},
+    "RowDefault"],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  mTensor`CoXD[$CellContext`f],
+  Editable->False]], "Output",
+ CellChangeTimes->{3.775022489749284*^9, 3.775023034163637*^9, 
+  3.827046094855488*^9, 3.915948000228914*^9, 3.9182939445658417`*^9},
+ CellLabel->
+  "Out[222]=",ExpressionUUID->"1fdbbef4-43fb-a343-9baf-6bed97b9498f"],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      SuperscriptBox["\[Del]", "b"], 
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox["f", 
+         TemplateBox[{"b", "a"}, "RowDefault"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+       $CellContext`f[$CellContext`lb, $CellContext`la], Editable -> False]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`CD[$CellContext`ub, 
+    $CellContext`f[$CellContext`lb, $CellContext`la]],
+   Editable->False]}]], "Output",
+ CellChangeTimes->{3.775022489749284*^9, 3.775023034163637*^9, 
+  3.827046094855488*^9, 3.915948000228914*^9, 3.9182939445658417`*^9},
+ CellLabel->
+  "Out[223]=",ExpressionUUID->"ab066fed-9463-084b-8f34-ba1be1e37c95"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"eqdiv", "=", 
+  RowBox[{
+   RowBox[{"CoXD", "[", "f", "]"}], "-", 
+   RowBox[{
+    FractionBox["1", 
+     SuperscriptBox["c", "2"]], "j"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"ToTensor", "[", 
+  RowBox[{"%", ",", 
+   RowBox[{"{", "la", "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.775022520936578*^9, 3.775022539785791*^9}, {
+  3.819154117125619*^9, 3.819154120007386*^9}, {3.915948016578615*^9, 
+  3.915948017018423*^9}},
+ CellLabel->
+  "In[224]:=",ExpressionUUID->"0470ec50-085f-4de2-aa94-df115978c3dd"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   FractionBox[
+    InterpretationBox[
+     StyleBox["j",
+      ShowAutoStyles->False,
+      AutoSpacing->False,
+      FontWeight->"Bold"],
+     $CellContext`j,
+     Editable->False], 
+    SuperscriptBox["c", "2"]]}], "+", 
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      StyleBox["\[Delta]", FontWeight -> "Bold"], 
+      TemplateBox[{
+        InterpretationBox[
+         StyleBox[
+          StyleBox["f", FontWeight -> "Bold"], AutoSpacing -> False, 
+          ShowAutoStyles -> False], $CellContext`f, Editable -> False]}, 
+       "RowDefault"]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`CoXD[$CellContext`f],
+   Editable->False]}]], "Output",
+ CellChangeTimes->{
+  3.775022540957464*^9, 3.775023036194335*^9, 3.827046109369309*^9, {
+   3.91594801164122*^9, 3.915948018004801*^9}, 3.918293992381752*^9},
+ CellLabel->
+  "Out[224]=",ExpressionUUID->"f0e477fb-ba29-944a-8188-b175c9020064"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   InterpretationBox[
+    StyleBox[
+     TemplateBox[{
+       SuperscriptBox["\[Del]", "b"], 
+       InterpretationBox[
+        StyleBox[
+         SubsuperscriptBox["f", 
+          TemplateBox[{"b", "a"}, "RowDefault"], 
+          TemplateBox[{
+            StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+            StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+           "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+        $CellContext`f[$CellContext`lb, $CellContext`la], Editable -> False]},
+      "RowDefault"],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    mTensor`CD[$CellContext`ub, 
+     $CellContext`f[$CellContext`lb, $CellContext`la]],
+    Editable->False]}], "-", 
+  FractionBox[
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["j", 
+      TemplateBox[{"a"},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`j[$CellContext`la],
+    Editable->False], 
+   SuperscriptBox["c", "2"]]}]], "Output",
+ CellChangeTimes->{
+  3.775022540957464*^9, 3.775023036194335*^9, 3.827046109369309*^9, {
+   3.91594801164122*^9, 3.915948018004801*^9}, 3.918293992381752*^9},
+ CellLabel->
+  "Out[225]=",ExpressionUUID->"d8a9f09f-91c6-ef46-9d9c-f9d84a6f40c0"]
+}, Open  ]],
+
+Cell["IndexedTensor\:b97c \:c774\:c6a9\:d55c Maxwell \:bc29\:c815\:c2dd2 (\
+\:be44\:c559\:d0a4 \:d56d\:b4f1\:c2dd):", "Text",
+ CellChangeTimes->{
+  3.827046130273602*^9, {3.9159480378815594`*^9, 
+   3.9159480405934124`*^9}},ExpressionUUID->"4526badb-42b3-49f5-8e47-\
+d0be0d57c835"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"cycEq", "=", 
+  RowBox[{"3", "*", 
+   RowBox[{"AntisymmetrizeIndices", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"la", ",", "lb", ",", "lc"}], "}"}], ",", 
+     RowBox[{"CD", "[", 
+      RowBox[{"la", ",", 
+       RowBox[{"F", "[", 
+        RowBox[{"lb", ",", "lc"}], "]"}]}], "]"}]}], 
+    "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"%", "//", "TindexSort"}]}], "Input",
+ CellChangeTimes->{{3.775022583233627*^9, 3.775022642105318*^9}, 
+   3.827046137795889*^9, {3.915948047778663*^9, 3.915948048146515*^9}},
+ CellLabel->
+  "In[226]:=",ExpressionUUID->"4d24cff2-ea3a-43bb-825c-381e592365a9"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   FractionBox["1", "2"], " ", 
+   InterpretationBox[
+    StyleBox[
+     TemplateBox[{
+       SubscriptBox["\[Del]", "a"], 
+       InterpretationBox[
+        StyleBox[
+         SubsuperscriptBox["F", 
+          TemplateBox[{"b", "c"}, "RowDefault"], 
+          TemplateBox[{
+            StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+            StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+           "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+        $CellContext`F[$CellContext`lb, $CellContext`lc], Editable -> False]},
+      "RowDefault"],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    mTensor`CD[$CellContext`la, 
+     $CellContext`F[$CellContext`lb, $CellContext`lc]],
+    Editable->False]}], "-", 
+  RowBox[{
+   FractionBox["1", "2"], " ", 
+   InterpretationBox[
+    StyleBox[
+     TemplateBox[{
+       SubscriptBox["\[Del]", "a"], 
+       InterpretationBox[
+        StyleBox[
+         SubsuperscriptBox["F", 
+          TemplateBox[{"c", "b"}, "RowDefault"], 
+          TemplateBox[{
+            StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+            StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+           "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+        $CellContext`F[$CellContext`lc, $CellContext`lb], Editable -> False]},
+      "RowDefault"],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    mTensor`CD[$CellContext`la, 
+     $CellContext`F[$CellContext`lc, $CellContext`lb]],
+    Editable->False]}], "-", 
+  RowBox[{
+   FractionBox["1", "2"], " ", 
+   InterpretationBox[
+    StyleBox[
+     TemplateBox[{
+       SubscriptBox["\[Del]", "b"], 
+       InterpretationBox[
+        StyleBox[
+         SubsuperscriptBox["F", 
+          TemplateBox[{"a", "c"}, "RowDefault"], 
+          TemplateBox[{
+            StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+            StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+           "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+        $CellContext`F[$CellContext`la, $CellContext`lc], Editable -> False]},
+      "RowDefault"],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    mTensor`CD[$CellContext`lb, 
+     $CellContext`F[$CellContext`la, $CellContext`lc]],
+    Editable->False]}], "+", 
+  RowBox[{
+   FractionBox["1", "2"], " ", 
+   InterpretationBox[
+    StyleBox[
+     TemplateBox[{
+       SubscriptBox["\[Del]", "b"], 
+       InterpretationBox[
+        StyleBox[
+         SubsuperscriptBox["F", 
+          TemplateBox[{"c", "a"}, "RowDefault"], 
+          TemplateBox[{
+            StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+            StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+           "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+        $CellContext`F[$CellContext`lc, $CellContext`la], Editable -> False]},
+      "RowDefault"],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    mTensor`CD[$CellContext`lb, 
+     $CellContext`F[$CellContext`lc, $CellContext`la]],
+    Editable->False]}], "+", 
+  RowBox[{
+   FractionBox["1", "2"], " ", 
+   InterpretationBox[
+    StyleBox[
+     TemplateBox[{
+       SubscriptBox["\[Del]", "c"], 
+       InterpretationBox[
+        StyleBox[
+         SubsuperscriptBox["F", 
+          TemplateBox[{"a", "b"}, "RowDefault"], 
+          TemplateBox[{
+            StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+            StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+           "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+        $CellContext`F[$CellContext`la, $CellContext`lb], Editable -> False]},
+      "RowDefault"],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    mTensor`CD[$CellContext`lc, 
+     $CellContext`F[$CellContext`la, $CellContext`lb]],
+    Editable->False]}], "-", 
+  RowBox[{
+   FractionBox["1", "2"], " ", 
+   InterpretationBox[
+    StyleBox[
+     TemplateBox[{
+       SubscriptBox["\[Del]", "c"], 
+       InterpretationBox[
+        StyleBox[
+         SubsuperscriptBox["F", 
+          TemplateBox[{"b", "a"}, "RowDefault"], 
+          TemplateBox[{
+            StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+            StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+           "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+        $CellContext`F[$CellContext`lb, $CellContext`la], Editable -> False]},
+      "RowDefault"],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    mTensor`CD[$CellContext`lc, 
+     $CellContext`F[$CellContext`lb, $CellContext`la]],
+    Editable->False]}]}]], "Output",
+ CellChangeTimes->{{3.7750226264756*^9, 3.775022642920395*^9}, 
+   3.775023037999287*^9, 3.827046138402285*^9, {3.9159480449549427`*^9, 
+   3.915948048554905*^9}, 3.9182940047124596`*^9},
+ CellLabel->
+  "Out[226]=",ExpressionUUID->"88f72749-d762-3047-9465-1b300ea25614"],
+
+Cell[BoxData[
+ RowBox[{
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      SubscriptBox["\[Del]", "a"], 
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox["F", 
+         TemplateBox[{"b", "c"}, "RowDefault"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+       $CellContext`F[$CellContext`lb, $CellContext`lc], Editable -> False]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`CD[$CellContext`la, 
+    $CellContext`F[$CellContext`lb, $CellContext`lc]],
+   Editable->False], "-", 
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      SubscriptBox["\[Del]", "b"], 
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox["F", 
+         TemplateBox[{"a", "c"}, "RowDefault"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+       $CellContext`F[$CellContext`la, $CellContext`lc], Editable -> False]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`CD[$CellContext`lb, 
+    $CellContext`F[$CellContext`la, $CellContext`lc]],
+   Editable->False], "+", 
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      SubscriptBox["\[Del]", "c"], 
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox["F", 
+         TemplateBox[{"a", "b"}, "RowDefault"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+       $CellContext`F[$CellContext`la, $CellContext`lb], Editable -> False]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`CD[$CellContext`lc, 
+    $CellContext`F[$CellContext`la, $CellContext`lb]],
+   Editable->False]}]], "Output",
+ CellChangeTimes->{{3.7750226264756*^9, 3.775022642920395*^9}, 
+   3.775023037999287*^9, 3.827046138402285*^9, {3.9159480449549427`*^9, 
+   3.915948048554905*^9}, 3.9182940047124596`*^9},
+ CellLabel->
+  "Out[227]=",ExpressionUUID->"ce036751-4dd4-eb45-9b09-db0880e78d80"]
+}, Open  ]],
+
+Cell["\:bbf8\:bd84 \:d615\:c2dd\:c744 \:c774\:c6a9\:d55c Maxwell \:bc29\:c815\
+\:c2dd2 (\:be44\:c559\:d0a4 \:d56d\:b4f1\:c2dd):", "Text",
+ CellChangeTimes->{
+  3.8270461577478943`*^9, {3.915948056409498*^9, 
+   3.915948061057373*^9}},ExpressionUUID->"38f7aa74-0dbe-4dbc-a303-\
+7257791c6d1b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"XD", "[", "f", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ToTensor", "[", 
+  RowBox[{"%", ",", 
+   RowBox[{"{", 
+    RowBox[{"la", ",", "lb", ",", "lc"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.775022650524276*^9, 3.775022652178401*^9}, {
+  3.819154195865796*^9, 3.81915419607665*^9}, {3.915948071921053*^9, 
+  3.915948072298082*^9}},
+ CellLabel->
+  "In[228]:=",ExpressionUUID->"44ff3526-79db-49cb-a4ec-f257dd918236"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   TemplateBox[{
+     StyleBox["d", FontWeight -> "Bold"], 
+     TemplateBox[{
+       InterpretationBox[
+        StyleBox[
+         StyleBox["f", FontWeight -> "Bold"], AutoSpacing -> False, 
+         ShowAutoStyles -> False], 
+        $CellContext`f[], Editable -> False]}, "RowDefault"]},
+    "RowDefault"],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  mTensor`XD[
+   $CellContext`f[]],
+  Editable->False]], "Output",
+ CellChangeTimes->{3.775022652592932*^9, 3.775023039039108*^9, 
+  3.827046161766017*^9, 3.915948073099136*^9, 3.918294011157242*^9},
+ CellLabel->
+  "Out[228]=",ExpressionUUID->"6827dda8-8da3-c04e-af1a-863862fd1404"],
+
+Cell[BoxData[
+ RowBox[{
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      SubscriptBox["\[Del]", "a"], 
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox["f", 
+         TemplateBox[{"b", "c"}, "RowDefault"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+       $CellContext`f[$CellContext`lb, $CellContext`lc], Editable -> False]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`CD[$CellContext`la, 
+    $CellContext`f[$CellContext`lb, $CellContext`lc]],
+   Editable->False], "-", 
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      SubscriptBox["\[Del]", "b"], 
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox["f", 
+         TemplateBox[{"a", "c"}, "RowDefault"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+       $CellContext`f[$CellContext`la, $CellContext`lc], Editable -> False]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`CD[$CellContext`lb, 
+    $CellContext`f[$CellContext`la, $CellContext`lc]],
+   Editable->False], "+", 
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      SubscriptBox["\[Del]", "c"], 
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox["f", 
+         TemplateBox[{"a", "b"}, "RowDefault"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+       $CellContext`f[$CellContext`la, $CellContext`lb], Editable -> False]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`CD[$CellContext`lc, 
+    $CellContext`f[$CellContext`la, $CellContext`lb]],
+   Editable->False]}]], "Output",
+ CellChangeTimes->{3.775022652592932*^9, 3.775023039039108*^9, 
+  3.827046161766017*^9, 3.915948073099136*^9, 3.918294011185013*^9},
+ CellLabel->
+  "Out[229]=",ExpressionUUID->"b67f84bc-06c0-f345-8764-2e47eb9eecc7"]
+}, Open  ]],
+
+Cell["\:bca1\:d130 \:d37c\:d150\:c15c 1-form\:acfc \:c804\:c790\:ae30\:c7a5 \
+2-form:", "Text",
+ CellChangeTimes->{
+  3.827046180555946*^9, {3.9159480817214108`*^9, 
+   3.9159480856442804`*^9}},ExpressionUUID->"a170e933-bc79-4495-951b-\
+1f9083dcbc77"],
+
+Cell[BoxData[
+ RowBox[{"Fdefine", "[", 
+  RowBox[{"a", ",", "1"}], "]"}]], "Input",
+ CellChangeTimes->{{3.775022680667085*^9, 3.77502268669842*^9}},
+ CellLabel->
+  "In[230]:=",ExpressionUUID->"b0c4980a-21e3-4870-9814-64e07bc511dd"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"vecpotEq", "=", 
+  RowBox[{"f", "-", 
+   RowBox[{"XD", "[", "a", "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"ToTensor", "[", 
+  RowBox[{"%", ",", 
+   RowBox[{"{", 
+    RowBox[{"la", ",", "lb"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7750226950749207`*^9, 3.775022709506553*^9}, {
+  3.819154242112414*^9, 3.819154244152147*^9}, {3.91594809730553*^9, 
+  3.915948097682121*^9}},
+ CellLabel->
+  "In[231]:=",ExpressionUUID->"cefc09d7-a0d5-48c6-9668-fe6876503755"],
+
+Cell[BoxData[
+ RowBox[{
+  InterpretationBox[
+   StyleBox["f",
+    ShowAutoStyles->False,
+    AutoSpacing->False,
+    FontWeight->"Bold"],
+   $CellContext`f,
+   Editable->False], "-", 
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      StyleBox["d", FontWeight -> "Bold"], 
+      TemplateBox[{
+        InterpretationBox[
+         StyleBox[
+          StyleBox["a", FontWeight -> "Bold"], AutoSpacing -> False, 
+          ShowAutoStyles -> False], 
+         $CellContext`a[], Editable -> False]}, "RowDefault"]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`XD[
+    $CellContext`a[]],
+   Editable->False]}]], "Output",
+ CellChangeTimes->{3.775022710368576*^9, 3.775023042270444*^9, 
+  3.8270461888894253`*^9, 3.9159480983160133`*^9, 3.918294024752676*^9},
+ CellLabel->
+  "Out[231]=",ExpressionUUID->"f4f03469-d556-db46-87fc-165b70b53631"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   InterpretationBox[
+    StyleBox[
+     TemplateBox[{
+       SubscriptBox["\[Del]", "a"], 
+       InterpretationBox[
+        StyleBox[
+         SubsuperscriptBox["a", 
+          TemplateBox[{"b"}, "RowDefault"], 
+          TemplateBox[{
+            StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+           "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+        $CellContext`a[$CellContext`lb], Editable -> False]},
+      "RowDefault"],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    mTensor`CD[$CellContext`la, 
+     $CellContext`a[$CellContext`lb]],
+    Editable->False]}], "+", 
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      SubscriptBox["\[Del]", "b"], 
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox["a", 
+         TemplateBox[{"a"}, "RowDefault"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+       $CellContext`a[$CellContext`la], Editable -> False]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`CD[$CellContext`lb, 
+    $CellContext`a[$CellContext`la]],
+   Editable->False], "+", 
+  InterpretationBox[
+   StyleBox[
+    SubsuperscriptBox["f", 
+     TemplateBox[{"a", "b"},
+      "RowDefault"], 
+     TemplateBox[{
+       StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+       StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+      "RowDefault"]],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   $CellContext`f[$CellContext`la, $CellContext`lb],
+   Editable->False]}]], "Output",
+ CellChangeTimes->{3.775022710368576*^9, 3.775023042270444*^9, 
+  3.8270461888894253`*^9, 3.9159480983160133`*^9, 3.918294024752676*^9},
+ CellLabel->
+  "Out[232]=",ExpressionUUID->"b5e3a5a1-39f0-ca4a-b897-b9c257b50226"]
+}, Open  ]],
+
+Cell["\:bca1\:d130 \:d37c\:d150\:c15c 1-form\:c744 \:c774\:c6a9\:d55c Maxwell \
+\:bc29\:c815\:c2dd2 (\:be44\:c559\:d0a4 \:d56d\:b4f1\:c2dd):", "Text",
+ CellChangeTimes->{
+  3.8270462016494336`*^9, {3.9159481094358053`*^9, 
+   3.9159481258487616`*^9}},ExpressionUUID->"03b31262-1d74-4158-8bd5-\
+4a405579e2b4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"XD", "[", "vecpotEq", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ToTensor", "[", 
+  RowBox[{"%", ",", 
+   RowBox[{"{", 
+    RowBox[{"la", ",", "lb", ",", "lc"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.775022742123671*^9, 3.7750227457775283`*^9}, {
+  3.918294056636587*^9, 3.9182940650962143`*^9}},
+ CellLabel->
+  "In[234]:=",ExpressionUUID->"355d19b6-aa18-4b95-a6c1-44d92257ec44"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   TemplateBox[{
+     StyleBox["d", FontWeight -> "Bold"], 
+     TemplateBox[{
+       InterpretationBox[
+        StyleBox[
+         StyleBox["f", FontWeight -> "Bold"], AutoSpacing -> False, 
+         ShowAutoStyles -> False], 
+        $CellContext`f[], Editable -> False]}, "RowDefault"]},
+    "RowDefault"],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  mTensor`XD[
+   $CellContext`f[]],
+  Editable->False]], "Output",
+ CellChangeTimes->{3.775022746336892*^9, 3.775023045192136*^9, 
+  3.827046205464244*^9, 3.915948137380377*^9, 3.918294033303404*^9, 
+  3.918294067581621*^9},
+ CellLabel->
+  "Out[234]=",ExpressionUUID->"d8d16b30-eb8e-024c-a364-b29eec96f96a"],
+
+Cell[BoxData[
+ RowBox[{
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      SubscriptBox["\[Del]", "a"], 
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox["f", 
+         TemplateBox[{"b", "c"}, "RowDefault"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+       $CellContext`f[$CellContext`lb, $CellContext`lc], Editable -> False]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`CD[$CellContext`la, 
+    $CellContext`f[$CellContext`lb, $CellContext`lc]],
+   Editable->False], "-", 
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      SubscriptBox["\[Del]", "b"], 
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox["f", 
+         TemplateBox[{"a", "c"}, "RowDefault"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+       $CellContext`f[$CellContext`la, $CellContext`lc], Editable -> False]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`CD[$CellContext`lb, 
+    $CellContext`f[$CellContext`la, $CellContext`lc]],
+   Editable->False], "+", 
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      SubscriptBox["\[Del]", "c"], 
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox["f", 
+         TemplateBox[{"a", "b"}, "RowDefault"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+       $CellContext`f[$CellContext`la, $CellContext`lb], Editable -> False]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`CD[$CellContext`lc, 
+    $CellContext`f[$CellContext`la, $CellContext`lb]],
+   Editable->False]}]], "Output",
+ CellChangeTimes->{3.775022746336892*^9, 3.775023045192136*^9, 
+  3.827046205464244*^9, 3.915948137380377*^9, 3.918294033303404*^9, 
+  3.918294067608261*^9},
+ CellLabel->
+  "Out[235]=",ExpressionUUID->"025b9fef-32ed-984d-aef1-32a34a54068d"]
+}, Open  ]],
+
+Cell["\:bca1\:d130 \:d37c\:d150\:c15c 1-form\:c744 \:c774\:c6a9\:d55c Maxwell \
+\:bc29\:c815\:c2dd1:", "Text",
+ CellChangeTimes->{
+  3.8270462201357527`*^9, {3.915948139760391*^9, 
+   3.915948149344204*^9}},ExpressionUUID->"8a8dd067-8537-43c3-9057-\
+2a2498be5dac"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"eqdiv2", "=", 
+  RowBox[{"eqdiv", "/.", 
+   RowBox[{"f", "\[Rule]", 
+    RowBox[{"XD", "[", "a", "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.775022755435939*^9, 3.775022775034392*^9}, {
+  3.8191542856077633`*^9, 3.819154285810605*^9}},
+ CellLabel->
+  "In[236]:=",ExpressionUUID->"b8560e16-8386-4aaf-bd7d-546f0801b9d0"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   FractionBox[
+    InterpretationBox[
+     StyleBox["j",
+      ShowAutoStyles->False,
+      AutoSpacing->False,
+      FontWeight->"Bold"],
+     $CellContext`j,
+     Editable->False], 
+    SuperscriptBox["c", "2"]]}], "+", 
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      StyleBox["\[Delta]", FontWeight -> "Bold"], 
+      TemplateBox[{
+        InterpretationBox[
+         StyleBox[
+          TemplateBox[{
+            StyleBox["d", FontWeight -> "Bold"], 
+            TemplateBox[{
+              InterpretationBox[
+               StyleBox[
+                StyleBox["a", FontWeight -> "Bold"], AutoSpacing -> False, 
+                ShowAutoStyles -> False], 
+               $CellContext`a[], Editable -> False]}, "RowDefault"]}, 
+           "RowDefault"], AutoSpacing -> False, ShowAutoStyles -> False], 
+         mTensor`XD[
+          $CellContext`a[]], Editable -> False]}, "RowDefault"]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`CoXD[
+    mTensor`XD[
+     $CellContext`a[]]],
+   Editable->False]}]], "Output",
+ CellChangeTimes->{3.7750227758185015`*^9, 3.775023046136069*^9, 
+  3.827046228422342*^9, 3.915948152898218*^9, 3.918294101720089*^9},
+ CellLabel->
+  "Out[236]=",ExpressionUUID->"2d3f1fb0-6e7f-7e4b-af7c-a60f654971f9"]
+}, Open  ]],
+
+Cell["\:b85c\:b80c\:ce20 \:ac8c\:c774\:c9c0 \:c870\:ac74:", "Text",
+ CellChangeTimes->{
+  3.827046239811296*^9},ExpressionUUID->"e72a626d-7eeb-4faf-8b86-\
+6a0dd2007a8c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"lorentz", "=", 
+  RowBox[{"CoXD", "[", "a", "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"ToTensor", "[", 
+  RowBox[{"lorentz", ",", 
+   RowBox[{"{", "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.775022792348755*^9, 3.775022806512699*^9}, {
+  3.819154331250729*^9, 3.8191543314384966`*^9}, {3.915948159409006*^9, 
+  3.915948159753986*^9}},
+ CellLabel->
+  "In[237]:=",ExpressionUUID->"e5f7b68d-2d2f-4898-87e3-fea6bb71caad"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   TemplateBox[{
+     StyleBox["\[Delta]", FontWeight -> "Bold"], 
+     TemplateBox[{
+       InterpretationBox[
+        StyleBox[
+         StyleBox["a", FontWeight -> "Bold"], AutoSpacing -> False, 
+         ShowAutoStyles -> False], $CellContext`a, Editable -> False]}, 
+      "RowDefault"]},
+    "RowDefault"],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  mTensor`CoXD[$CellContext`a],
+  Editable->False]], "Output",
+ CellChangeTimes->{
+  3.7750228070880575`*^9, 3.775023047271786*^9, 3.8270462441841865`*^9, {
+   3.9159481562105613`*^9, 3.915948160155487*^9}, 3.9182941110252285`*^9},
+ CellLabel->
+  "Out[237]=",ExpressionUUID->"1a73b3ad-3240-254d-8b51-f37906b67920"],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      SuperscriptBox["\[Del]", "a"], 
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox["a", 
+         TemplateBox[{"a"}, "RowDefault"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+       $CellContext`a[$CellContext`la], Editable -> False]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`CD[$CellContext`ua, 
+    $CellContext`a[$CellContext`la]],
+   Editable->False]}]], "Output",
+ CellChangeTimes->{
+  3.7750228070880575`*^9, 3.775023047271786*^9, 3.8270462441841865`*^9, {
+   3.9159481562105613`*^9, 3.915948160155487*^9}, 3.9182941110252285`*^9},
+ CellLabel->
+  "Out[238]=",ExpressionUUID->"e4e978fe-55de-344c-a5a1-16ccceb7e2e0"]
+}, Open  ]],
+
+Cell["\:b85c\:b80c\:ce20 \:ac8c\:c774\:c9c0 \:c870\:ac74\:c744 \:c694\:ad6c\
+\:d558\:c600\:c744 \:b54c\:c758 Maxwell \:bc29\:c815\:c2dd1:", "Text",
+ CellChangeTimes->{
+  3.827046257732315*^9, {3.915948169696169*^9, 
+   3.915948179520275*^9}},ExpressionUUID->"01bdd3a1-69e7-4d94-b17c-\
+896e134780ed"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"CoXD", "[", 
+   RowBox[{"XD", "[", "a", "]"}], "]"}], "+", 
+  RowBox[{"XD", "[", 
+   RowBox[{"CoXD", "[", "a", "]"}], "]"}], "-", 
+  RowBox[{
+   FractionBox["1", 
+    SuperscriptBox["c", "2"]], "j"}]}], "\[IndentingNewLine]", 
+ RowBox[{"ToTensor", "[", 
+  RowBox[{"%", ",", 
+   RowBox[{"{", "la", "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7750228578931913`*^9, 3.775022900434911*^9}, {
+  3.8191543737871327`*^9, 3.81915437888828*^9}, {3.915948184936865*^9, 
+  3.915948185240868*^9}},
+ CellLabel->
+  "In[239]:=",ExpressionUUID->"b6c35942-188b-45b9-a89c-c1a91263fc82"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   FractionBox[
+    InterpretationBox[
+     StyleBox["j",
+      ShowAutoStyles->False,
+      AutoSpacing->False,
+      FontWeight->"Bold"],
+     $CellContext`j,
+     Editable->False], 
+    SuperscriptBox["c", "2"]]}], "+", 
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      StyleBox["\[Delta]", FontWeight -> "Bold"], 
+      TemplateBox[{
+        InterpretationBox[
+         StyleBox[
+          TemplateBox[{
+            StyleBox["d", FontWeight -> "Bold"], 
+            TemplateBox[{
+              InterpretationBox[
+               StyleBox[
+                StyleBox["a", FontWeight -> "Bold"], AutoSpacing -> False, 
+                ShowAutoStyles -> False], 
+               $CellContext`a[], Editable -> False]}, "RowDefault"]}, 
+           "RowDefault"], AutoSpacing -> False, ShowAutoStyles -> False], 
+         mTensor`XD[
+          $CellContext`a[]], Editable -> False]}, "RowDefault"]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`CoXD[
+    mTensor`XD[
+     $CellContext`a[]]],
+   Editable->False], "+", 
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      StyleBox["d", FontWeight -> "Bold"], 
+      TemplateBox[{
+        InterpretationBox[
+         StyleBox[
+          TemplateBox[{
+            StyleBox["\[Delta]", FontWeight -> "Bold"], 
+            TemplateBox[{
+              InterpretationBox[
+               StyleBox[
+                StyleBox["a", FontWeight -> "Bold"], AutoSpacing -> False, 
+                ShowAutoStyles -> False], $CellContext`a, Editable -> False]},
+              "RowDefault"]}, "RowDefault"], AutoSpacing -> False, 
+          ShowAutoStyles -> False], 
+         mTensor`CoXD[$CellContext`a], Editable -> False]}, "RowDefault"]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`XD[
+    mTensor`CoXD[$CellContext`a]],
+   Editable->False]}]], "Output",
+ CellChangeTimes->{{3.775022868218505*^9, 3.775022901247911*^9}, 
+   3.7750230505261*^9, 3.775023088074658*^9, 3.827046269918*^9, 
+   3.915948185643784*^9, 3.9182942826925488`*^9},
+ CellLabel->
+  "Out[239]=",ExpressionUUID->"42f88e1a-504c-1242-b171-93a2204ee3ce"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   InterpretationBox[
+    StyleBox[
+     TemplateBox[{
+       SubscriptBox["\[Del]", "a"], 
+       InterpretationBox[
+        StyleBox[
+         TemplateBox[{
+           SubscriptBox["\[Del]", "b"], 
+           InterpretationBox[
+            StyleBox[
+             SubsuperscriptBox["a", 
+              TemplateBox[{
+                StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+               "RowDefault"], 
+              TemplateBox[{"b"}, "RowDefault"]], AutoSpacing -> False, 
+             ShowAutoStyles -> False], 
+            $CellContext`a[$CellContext`ub], Editable -> False]}, 
+          "RowDefault"], AutoSpacing -> False, ShowAutoStyles -> False], 
+        mTensor`CD[$CellContext`lb, 
+         $CellContext`a[$CellContext`ub]], Editable -> False]},
+      "RowDefault"],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    mTensor`CD[$CellContext`la, 
+     mTensor`CD[$CellContext`lb, 
+      $CellContext`a[$CellContext`ub]]],
+    Editable->False]}], "+", 
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      SuperscriptBox["\[Del]", "b"], 
+      InterpretationBox[
+       StyleBox[
+        TemplateBox[{
+          SubscriptBox["\[Del]", "a"], 
+          InterpretationBox[
+           StyleBox[
+            SubsuperscriptBox["a", 
+             TemplateBox[{"b"}, "RowDefault"], 
+             TemplateBox[{
+               StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+              "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+           $CellContext`a[$CellContext`lb], Editable -> False]}, 
+         "RowDefault"], AutoSpacing -> False, ShowAutoStyles -> False], 
+       mTensor`CD[$CellContext`la, 
+        $CellContext`a[$CellContext`lb]], Editable -> False]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`CD[$CellContext`ub, 
+    mTensor`CD[$CellContext`la, 
+     $CellContext`a[$CellContext`lb]]],
+   Editable->False], "-", 
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      SuperscriptBox["\[Del]", "b"], 
+      InterpretationBox[
+       StyleBox[
+        TemplateBox[{
+          SubscriptBox["\[Del]", "b"], 
+          InterpretationBox[
+           StyleBox[
+            SubsuperscriptBox["a", 
+             TemplateBox[{"a"}, "RowDefault"], 
+             TemplateBox[{
+               StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+              "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+           $CellContext`a[$CellContext`la], Editable -> False]}, 
+         "RowDefault"], AutoSpacing -> False, ShowAutoStyles -> False], 
+       mTensor`CD[$CellContext`lb, 
+        $CellContext`a[$CellContext`la]], Editable -> False]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`CD[$CellContext`ub, 
+    mTensor`CD[$CellContext`lb, 
+     $CellContext`a[$CellContext`la]]],
+   Editable->False], "-", 
+  FractionBox[
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["j", 
+      TemplateBox[{"a"},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`j[$CellContext`la],
+    Editable->False], 
+   SuperscriptBox["c", "2"]]}]], "Output",
+ CellChangeTimes->{{3.775022868218505*^9, 3.775022901247911*^9}, 
+   3.7750230505261*^9, 3.775023088074658*^9, 3.827046269918*^9, 
+   3.915948185643784*^9, 3.9182942826925488`*^9},
+ CellLabel->
+  "Out[240]=",ExpressionUUID->"80db5c5b-d63c-e647-bcfc-2978bcc4c98b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"maxdivEq", "=", "%"}]], "Input",
+ CellChangeTimes->{{3.775023092737371*^9, 3.775023093417598*^9}},
+ CellLabel->
+  "In[241]:=",ExpressionUUID->"16b05074-2411-4d91-bee5-e050cb392c1c"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   InterpretationBox[
+    StyleBox[
+     TemplateBox[{
+       SubscriptBox["\[Del]", "a"], 
+       InterpretationBox[
+        StyleBox[
+         TemplateBox[{
+           SubscriptBox["\[Del]", "b"], 
+           InterpretationBox[
+            StyleBox[
+             SubsuperscriptBox["a", 
+              TemplateBox[{
+                StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+               "RowDefault"], 
+              TemplateBox[{"b"}, "RowDefault"]], AutoSpacing -> False, 
+             ShowAutoStyles -> False], 
+            $CellContext`a[$CellContext`ub], Editable -> False]}, 
+          "RowDefault"], AutoSpacing -> False, ShowAutoStyles -> False], 
+        mTensor`CD[$CellContext`lb, 
+         $CellContext`a[$CellContext`ub]], Editable -> False]},
+      "RowDefault"],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    mTensor`CD[$CellContext`la, 
+     mTensor`CD[$CellContext`lb, 
+      $CellContext`a[$CellContext`ub]]],
+    Editable->False]}], "+", 
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      SuperscriptBox["\[Del]", "b"], 
+      InterpretationBox[
+       StyleBox[
+        TemplateBox[{
+          SubscriptBox["\[Del]", "a"], 
+          InterpretationBox[
+           StyleBox[
+            SubsuperscriptBox["a", 
+             TemplateBox[{"b"}, "RowDefault"], 
+             TemplateBox[{
+               StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+              "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+           $CellContext`a[$CellContext`lb], Editable -> False]}, 
+         "RowDefault"], AutoSpacing -> False, ShowAutoStyles -> False], 
+       mTensor`CD[$CellContext`la, 
+        $CellContext`a[$CellContext`lb]], Editable -> False]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`CD[$CellContext`ub, 
+    mTensor`CD[$CellContext`la, 
+     $CellContext`a[$CellContext`lb]]],
+   Editable->False], "-", 
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      SuperscriptBox["\[Del]", "b"], 
+      InterpretationBox[
+       StyleBox[
+        TemplateBox[{
+          SubscriptBox["\[Del]", "b"], 
+          InterpretationBox[
+           StyleBox[
+            SubsuperscriptBox["a", 
+             TemplateBox[{"a"}, "RowDefault"], 
+             TemplateBox[{
+               StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+              "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+           $CellContext`a[$CellContext`la], Editable -> False]}, 
+         "RowDefault"], AutoSpacing -> False, ShowAutoStyles -> False], 
+       mTensor`CD[$CellContext`lb, 
+        $CellContext`a[$CellContext`la]], Editable -> False]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`CD[$CellContext`ub, 
+    mTensor`CD[$CellContext`lb, 
+     $CellContext`a[$CellContext`la]]],
+   Editable->False], "-", 
+  FractionBox[
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["j", 
+      TemplateBox[{"a"},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`j[$CellContext`la],
+    Editable->False], 
+   SuperscriptBox["c", "2"]]}]], "Output",
+ CellChangeTimes->{3.775023094208701*^9, 3.827046280378247*^9, 
+  3.915948208799427*^9, 3.9182942860537376`*^9},
+ CellLabel->
+  "Out[241]=",ExpressionUUID->"f96797b9-e94c-1e44-a183-46042303c6eb"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"maxdivEq", "[", 
+   RowBox[{"[", "1", "]"}], "]"}], "=", 
+  RowBox[{"CommuteCD", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"la", ",", "lb"}], "}"}], ",", 
+    RowBox[{"maxdivEq", "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7750229555000706`*^9, 3.775022971051443*^9}, {
+  3.775023058579084*^9, 3.77502306365026*^9}, {3.775023118806225*^9, 
+  3.775023119753148*^9}},
+ CellLabel->
+  "In[242]:=",ExpressionUUID->"a72e943b-c9d9-4811-9ac2-6840f1925f4c"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   InterpretationBox[
+    StyleBox[
+     TemplateBox[{
+       SubscriptBox["\[Del]", "b"], 
+       InterpretationBox[
+        StyleBox[
+         TemplateBox[{
+           SubscriptBox["\[Del]", "a"], 
+           InterpretationBox[
+            StyleBox[
+             SubsuperscriptBox["a", 
+              TemplateBox[{
+                StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+               "RowDefault"], 
+              TemplateBox[{"b"}, "RowDefault"]], AutoSpacing -> False, 
+             ShowAutoStyles -> False], 
+            $CellContext`a[$CellContext`ub], Editable -> False]}, 
+          "RowDefault"], AutoSpacing -> False, ShowAutoStyles -> False], 
+        mTensor`CD[$CellContext`la, 
+         $CellContext`a[$CellContext`ub]], Editable -> False]},
+      "RowDefault"],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    mTensor`CD[$CellContext`lb, 
+     mTensor`CD[$CellContext`la, 
+      $CellContext`a[$CellContext`ub]]],
+    Editable->False]}], "+", 
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["a", 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"], 
+      TemplateBox[{"b"},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`a[$CellContext`ub],
+    Editable->False], " ", 
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["R", 
+      TemplateBox[{"a", "b"},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    mTensor`RicciCD[$CellContext`la, $CellContext`lb],
+    Editable->False]}]}]], "Output",
+ CellChangeTimes->{
+  3.7750229601617837`*^9, 3.775023064828925*^9, {3.775023103792787*^9, 
+   3.775023121288415*^9}, 3.827046285367463*^9, 3.915948211591854*^9, 
+   3.9182943313915577`*^9},
+ CellLabel->
+  "Out[242]=",ExpressionUUID->"4110387c-ff6d-7347-807b-0a38d41f7ad2"]
+}, Open  ]],
+
+Cell["\:b530\:b77c\:c11c \:b85c\:b80c\:ce20 \:ac8c\:c774\:c9c0 \:c870\:ac74\
+\:c744 \:c694\:ad6c\:d558\:c600\:c744 \:b54c", "Text",
+ CellChangeTimes->{{3.827046296982773*^9, 3.8270463043518534`*^9}, {
+  3.915948216487568*^9, 
+  3.915948220839653*^9}},ExpressionUUID->"282db59b-367f-408b-bafe-\
+4e16931bcc93"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"maxdivEq", "//", "Tsimplify"}]], "Input",
+ CellChangeTimes->{{3.775023126996499*^9, 3.775023136891715*^9}},
+ CellLabel->
+  "In[243]:=",ExpressionUUID->"e5158c8c-48ae-455b-b568-b6c464416ab8"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   InterpretationBox[
+    StyleBox[
+     TemplateBox[{
+       SubscriptBox["\[Del]", "b"], 
+       InterpretationBox[
+        StyleBox[
+         TemplateBox[{
+           SuperscriptBox["\[Del]", "b"], 
+           InterpretationBox[
+            StyleBox[
+             SubsuperscriptBox["a", 
+              TemplateBox[{"a"}, "RowDefault"], 
+              TemplateBox[{
+                StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+               "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+            $CellContext`a[$CellContext`la], Editable -> False]}, 
+          "RowDefault"], AutoSpacing -> False, ShowAutoStyles -> False], 
+        mTensor`CD[$CellContext`ub, 
+         $CellContext`a[$CellContext`la]], Editable -> False]},
+      "RowDefault"],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    mTensor`CD[$CellContext`lb, 
+     mTensor`CD[$CellContext`ub, 
+      $CellContext`a[$CellContext`la]]],
+    Editable->False]}], "-", 
+  FractionBox[
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["j", 
+      TemplateBox[{"a"},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`j[$CellContext`la],
+    Editable->False], 
+   SuperscriptBox["c", "2"]], "+", 
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["a", 
+      TemplateBox[{"b"},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`a[$CellContext`lb],
+    Editable->False], " ", 
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["R", 
+      TemplateBox[{"a", 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], "b"},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    mTensor`RicciCD[$CellContext`la, $CellContext`ub],
+    Editable->False]}]}]], "Output",
+ CellChangeTimes->{{3.7750231300845575`*^9, 3.775023137453618*^9}, 
+   3.827046315488567*^9, 3.915948243551082*^9, 3.9182943386664295`*^9},
+ CellLabel->
+  "Out[243]=",ExpressionUUID->"328bc3e2-83a1-004b-83d9-50b6025442b7"]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["6.3 Tensor-valued Forms: Cartan Structure Equations", "Subsection",
+ CellChangeTimes->{{3.7750231680727615`*^9, 
+  3.775023186041015*^9}},ExpressionUUID->"0cf84f52-e7c1-45bb-8653-\
+e41b4a4ca765"],
+
+Cell["\<\
+IndexedForm (basis 1-form, curvature 2-form, connection 1-form, torsion \
+2-form)\:c744 \:c815\:c758\:d55c\:b2e4:\
+\>", "Text",
+ CellChangeTimes->{
+  3.827051288654425*^9},ExpressionUUID->"f5d26f8c-c155-44b5-9076-\
+30493155b819"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Fdefine", "[", 
+   RowBox[{
+    RowBox[{"e", "[", "ua", "]"}], ",", "1"}], "]"}], ";", 
+  RowBox[{"Fdefine", "[", 
+   RowBox[{
+    RowBox[{"r", "[", 
+     RowBox[{"la", ",", "ub"}], "]"}], ",", "2"}], "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Fdefine", "[", 
+   RowBox[{
+    RowBox[{"\[Omega]", "[", 
+     RowBox[{"la", ",", "ub"}], "]"}], ",", "1"}], "]"}], ";", 
+  RowBox[{"Fdefine", "[", 
+   RowBox[{
+    RowBox[{"t", "[", "ua", "]"}], ",", "2"}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.775027696592136*^9, 3.77502770381295*^9}, 
+   3.8270512990066586`*^9, {3.915961349000395*^9, 3.915961350793089*^9}},
+ CellLabel->
+  "In[244]:=",ExpressionUUID->"04bd21d9-c83c-4113-b217-b37b42548fad"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"e", "[", "ua", "]"}], "\[Wedge]", 
+  RowBox[{"e", "[", "ub", "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"ToTensor", "[", 
+  RowBox[{"%", ",", 
+   RowBox[{"{", 
+    RowBox[{"lm", ",", "ln"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.775027711479257*^9, 3.7750277217176456`*^9}, {
+  3.91596136236828*^9, 3.915961362785015*^9}, {3.918294441682453*^9, 
+  3.91829444754714*^9}},
+ CellLabel->
+  "In[246]:=",ExpressionUUID->"90096fdf-66cf-404a-be60-72bf813e4d97"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   TemplateBox[{
+     InterpretationBox[
+      StyleBox[
+       SubsuperscriptBox[
+        StyleBox["e", FontWeight -> "Bold"], 
+        TemplateBox[{
+          StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+         "RowDefault"], 
+        TemplateBox[{"a"}, "RowDefault"]], AutoSpacing -> False, 
+       ShowAutoStyles -> False], 
+      $CellContext`e[$CellContext`ua], Editable -> False], "\"\[Wedge]\"", 
+     InterpretationBox[
+      StyleBox[
+       SubsuperscriptBox[
+        StyleBox["e", FontWeight -> "Bold"], 
+        TemplateBox[{
+          StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+         "RowDefault"], 
+        TemplateBox[{"b"}, "RowDefault"]], AutoSpacing -> False, 
+       ShowAutoStyles -> False], 
+      $CellContext`e[$CellContext`ub], Editable -> False]},
+    "RowDefault"],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  mTensor`XP[
+   $CellContext`e[$CellContext`ua], 
+   $CellContext`e[$CellContext`ub]],
+  Editable->False]], "Output",
+ CellChangeTimes->{
+  3.775027722448818*^9, {3.775027752718487*^9, 3.775027759879365*^9}, 
+   3.827051302737362*^9, 3.9159613642184143`*^9, 3.915962574580662*^9, 
+   3.91829444994565*^9},
+ CellLabel->
+  "Out[246]=",ExpressionUUID->"9b5a7078-828f-d746-85cc-30dc5e1115f8"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"-", 
+    InterpretationBox[
+     StyleBox[
+      SubsuperscriptBox["e", 
+       TemplateBox[{"m", 
+         StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+        "RowDefault"], 
+       TemplateBox[{
+         StyleBox["1", ShowContents -> False, StripOnInput -> False], "b"},
+        "RowDefault"]],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`e[$CellContext`lm, $CellContext`ub],
+     Editable->False]}], " ", 
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["e", 
+      TemplateBox[{"n", 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], "a"},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`e[$CellContext`ln, $CellContext`ua],
+    Editable->False]}], "+", 
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["e", 
+      TemplateBox[{"m", 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], "a"},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`e[$CellContext`lm, $CellContext`ua],
+    Editable->False], " ", 
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["e", 
+      TemplateBox[{"n", 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], "b"},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`e[$CellContext`ln, $CellContext`ub],
+    Editable->False]}]}]], "Output",
+ CellChangeTimes->{
+  3.775027722448818*^9, {3.775027752718487*^9, 3.775027759879365*^9}, 
+   3.827051302737362*^9, 3.9159613642184143`*^9, 3.915962574580662*^9, 
+   3.91829444994565*^9},
+ CellLabel->
+  "Out[247]=",ExpressionUUID->"97233e84-f304-c445-9ac2-e035a07d4f53"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"r", "[", 
+  RowBox[{"la", ",", "ub"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ToTensor", "[", 
+  RowBox[{"%", ",", 
+   RowBox[{"{", 
+    RowBox[{"lm", ",", "ln"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.775027776866102*^9, 3.775027835636458*^9}, {
+  3.915961376783909*^9, 3.9159613771441154`*^9}},
+ CellLabel->
+  "In[248]:=",ExpressionUUID->"3a2eeb3a-cd31-4a17-bd7b-200817c86f06"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   SubsuperscriptBox[
+    StyleBox["r",
+     FontWeight->"Bold"], 
+    TemplateBox[{"a", 
+      StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+     "RowDefault"], 
+    TemplateBox[{
+      StyleBox["1", ShowContents -> False, StripOnInput -> False], "b"},
+     "RowDefault"]],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  $CellContext`r[$CellContext`la, $CellContext`ub],
+  Editable->False]], "Output",
+ CellChangeTimes->{{3.775027780679778*^9, 3.7750278368680625`*^9}, 
+   3.827051342320017*^9, 3.915961377898168*^9, 3.9159625760785003`*^9, 
+   3.9182944624585495`*^9},
+ CellLabel->
+  "Out[248]=",ExpressionUUID->"b64299e8-f2f6-0545-a8cf-15bc0caabaf4"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   SubsuperscriptBox["r", 
+    TemplateBox[{"m", "n", "a", 
+      StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+     "RowDefault"], 
+    TemplateBox[{
+      StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+      StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+      StyleBox["1", ShowContents -> False, StripOnInput -> False], "b"},
+     "RowDefault"]],
+   ShowAutoStyles->False,
+   AutoSpacing->False],
+  $CellContext`r[$CellContext`lm, $CellContext`ln, $CellContext`la, \
+$CellContext`ub],
+  Editable->False]], "Output",
+ CellChangeTimes->{{3.775027780679778*^9, 3.7750278368680625`*^9}, 
+   3.827051342320017*^9, 3.915961377898168*^9, 3.9159625760785003`*^9, 
+   3.9182944624665546`*^9},
+ CellLabel->
+  "Out[249]=",ExpressionUUID->"58797b75-dfda-2f4e-953a-66b186e2deb3"]
+}, Open  ]],
+
+Cell["Cartan \:bc29\:c815\:c2dd1:", "Text",
+ CellChangeTimes->{
+  3.8270513625102515`*^9},ExpressionUUID->"24d5a7bc-d7a8-4790-b7d7-\
+40bcf3bb0ae3"],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{
+    SuperscriptBox["t", "a"], "=", "d"}], "\[InvisibleComma]", 
+   RowBox[{
+    SuperscriptBox["e", "a"], "-", 
+    RowBox[{
+     SuperscriptBox["e", "p"], "\[Wedge]", 
+     SuperscriptBox[
+      SubscriptBox["\[Omega]", "p"], "a"]}]}]}], TraditionalForm]],
+ FormatType->
+  TraditionalForm,ExpressionUUID->"fa91ad48-8830-c947-be03-a1bf1c479107"]], \
+"Text",
+ CellChangeTimes->{{3.918294595731411*^9, 3.9182946216903667`*^9}},
+ TextAlignment->Center,ExpressionUUID->"e4663d94-a8df-7941-b160-8b8af43d0c71"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"cartan1", "=", 
+  RowBox[{
+   RowBox[{"XD", "[", 
+    RowBox[{"e", "[", "ua", "]"}], "]"}], "-", 
+   RowBox[{
+    RowBox[{"e", "[", "ub", "]"}], "\[Wedge]", 
+    RowBox[{"\[Omega]", "[", 
+     RowBox[{"lb", ",", "ua"}], "]"}]}], "-", 
+   RowBox[{"t", "[", "ua", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.775027879989157*^9, 3.775027890769932*^9}, {
+  3.7750279501406*^9, 3.775027997421978*^9}, {3.915961487543121*^9, 
+  3.915961487991464*^9}, {3.915961928476017*^9, 3.915961946284413*^9}, {
+  3.9182945406296654`*^9, 3.9182945458126774`*^9}},
+ CellLabel->
+  "In[250]:=",ExpressionUUID->"4d6c109d-29fe-4ca7-8b3d-a44ae6dca3d7"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox[
+      StyleBox["t",
+       FontWeight->"Bold"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"], 
+      TemplateBox[{"a"},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`t[$CellContext`ua],
+    Editable->False]}], "+", 
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      StyleBox["d", FontWeight -> "Bold"], 
+      TemplateBox[{
+        InterpretationBox[
+         StyleBox[
+          SubsuperscriptBox[
+           StyleBox["e", FontWeight -> "Bold"], 
+           TemplateBox[{
+             StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+            "RowDefault"], 
+           TemplateBox[{"a"}, "RowDefault"]], AutoSpacing -> False, 
+          ShowAutoStyles -> False], 
+         $CellContext`e[$CellContext`ua], Editable -> False]}, "RowDefault"]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`XD[
+    $CellContext`e[$CellContext`ua]],
+   Editable->False], "-", 
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox[
+         StyleBox["e", FontWeight -> "Bold"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"], 
+         TemplateBox[{"b"}, "RowDefault"]], AutoSpacing -> False, 
+        ShowAutoStyles -> False], 
+       $CellContext`e[$CellContext`ub], Editable -> False], "\"\[Wedge]\"", 
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox[
+         StyleBox["\[Omega]", FontWeight -> "Bold"], 
+         TemplateBox[{"b", 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], "a"}, 
+          "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+       $CellContext`\[Omega][$CellContext`lb, $CellContext`ua], Editable -> 
+       False]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`XP[
+    $CellContext`e[$CellContext`ub], 
+    $CellContext`\[Omega][$CellContext`lb, $CellContext`ua]],
+   Editable->False]}]], "Output",
+ CellChangeTimes->{{3.775027976057207*^9, 3.77502799830098*^9}, 
+   3.827051438973315*^9, 3.915961493146948*^9, 3.9159619526957836`*^9, 
+   3.9159625998142405`*^9, 3.918294550991892*^9},
+ CellLabel->
+  "Out[250]=",ExpressionUUID->"5aa34b5a-97dc-1848-a62e-db27860ef1c5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"cartan1Rule", "=", 
+  RowBox[{"RuleUnique", "[", 
+   RowBox[{
+    RowBox[{"XD", "[", 
+     RowBox[{"e", "[", "ua_", "]"}], "]"}], ",", 
+    RowBox[{
+     RowBox[{"t", "[", "ua", "]"}], "+", 
+     RowBox[{
+      RowBox[{"e", "[", "ub", "]"}], "\[Wedge]", 
+      RowBox[{"\[Omega]", "[", 
+       RowBox[{"lb", ",", "ua"}], "]"}]}]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.775028022630388*^9, 3.77502808606245*^9}, {
+  3.775028564215334*^9, 3.7750285645649366`*^9}, {3.915961773149477*^9, 
+  3.9159617737091064`*^9}, {3.918294557007715*^9, 3.9182945622408466`*^9}},
+ CellLabel->
+  "In[251]:=",ExpressionUUID->"fd4e1da1-ad06-4b98-bfca-5f97ea52a52c"],
+
+Cell[BoxData[
+ RowBox[{
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      StyleBox["d", FontWeight -> "Bold"], 
+      TemplateBox[{
+        InterpretationBox[
+         StyleBox[
+          SubsuperscriptBox[
+           StyleBox["e", FontWeight -> "Bold"], 
+           TemplateBox[{
+             StyleBox["ua_", FontColor -> RGBColor[1, 0.5, 0]]}, 
+            "RowDefault"], 
+           TemplateBox[{
+             StyleBox["2", ShowContents -> False, StripOnInput -> False]}, 
+            "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+         $CellContext`e[
+          Pattern[$CellContext`ua, 
+           Blank[]]], Editable -> False]}, "RowDefault"]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`XD[
+    $CellContext`e[
+     Pattern[$CellContext`ua, 
+      Blank[]]]],
+   Editable->False], "\[RuleDelayed]", 
+  RowBox[{"DumFresh", "[", 
+   RowBox[{
+    InterpretationBox[
+     StyleBox[
+      SubsuperscriptBox[
+       StyleBox["t",
+        FontWeight->"Bold"], 
+       TemplateBox[{
+         StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+        "RowDefault"], 
+       TemplateBox[{"a"},
+        "RowDefault"]],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`t[$CellContext`ua],
+     Editable->False], "+", 
+    InterpretationBox[
+     StyleBox[
+      TemplateBox[{
+        InterpretationBox[
+         StyleBox[
+          SubsuperscriptBox[
+           StyleBox["e", FontWeight -> "Bold"], 
+           TemplateBox[{
+             StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+            "RowDefault"], 
+           TemplateBox[{"Latin$76774"}, "RowDefault"]], AutoSpacing -> False, 
+          ShowAutoStyles -> False], 
+         $CellContext`e[$CellContext`uLatin$76774], Editable -> False], 
+        "\"\[Wedge]\"", 
+        InterpretationBox[
+         StyleBox[
+          SubsuperscriptBox[
+           StyleBox["\[Omega]", FontWeight -> "Bold"], 
+           TemplateBox[{"Latin$76774", 
+             StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+            "RowDefault"], 
+           TemplateBox[{
+             StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+             "a"}, "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> 
+          False], 
+         $CellContext`\[Omega][$CellContext`lLatin$76774, $CellContext`ua], 
+         Editable -> False]},
+       "RowDefault"],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     mTensor`XP[
+      $CellContext`e[$CellContext`uLatin$76774], 
+      $CellContext`\[Omega][$CellContext`lLatin$76774, $CellContext`ua]],
+     Editable->False]}], "]"}]}]], "Output",
+ CellChangeTimes->{3.775028087562749*^9, 3.775028565661694*^9, 
+  3.827051443317498*^9, 3.915961523906313*^9, 3.915961775348163*^9, 
+  3.9159619730724583`*^9, 3.91596262015839*^9, 3.91829457496484*^9},
+ CellLabel->
+  "Out[251]=",ExpressionUUID->"71caa30a-6e37-7a46-9957-66babc2d65c0"]
+}, Open  ]],
+
+Cell["Cartan \:bc29\:c815\:c2dd2:", "Text",
+ CellChangeTimes->{
+  3.8270513625102515`*^9, {3.8270514558598537`*^9, 
+   3.827051456020938*^9}},ExpressionUUID->"4d7b52fb-b639-4a31-ad48-\
+5e3009d8d80c"],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{
+   SuperscriptBox[
+    SubscriptBox["r", "a"], "b"], "=", 
+   RowBox[{"-", 
+    RowBox[{"(", 
+     RowBox[{"d", "\[InvisibleComma]", 
+      RowBox[{
+       SuperscriptBox[
+        SubscriptBox["\[Omega]", "a"], "b"], "-", 
+       RowBox[{
+        SuperscriptBox[
+         SubscriptBox["\[Omega]", "a"], "p"], "\[Wedge]", 
+        SuperscriptBox[
+         SubscriptBox["\[Omega]", "p"], "b"]}]}]}], ")"}]}]}], 
+  TraditionalForm]],
+ FormatType->
+  TraditionalForm,ExpressionUUID->"be749528-73b6-9b47-8a5c-e58de6e2cfd9"]], \
+"Text",
+ CellChangeTimes->{{3.9182946489936466`*^9, 3.9182946824957256`*^9}},
+ TextAlignment->Center,ExpressionUUID->"2b695a42-f35f-db4a-9161-8860a02dcc3c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"cartan2", "=", 
+  RowBox[{
+   RowBox[{"XD", "[", 
+    RowBox[{"\[Omega]", "[", 
+     RowBox[{"la", ",", "ub"}], "]"}], "]"}], "-", 
+   RowBox[{
+    RowBox[{"\[Omega]", "[", 
+     RowBox[{"la", ",", "uc"}], "]"}], "\[Wedge]", 
+    RowBox[{"\[Omega]", "[", 
+     RowBox[{"lc", ",", "ub"}], "]"}]}], "+", 
+   RowBox[{"r", "[", 
+    RowBox[{"la", ",", "ub"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.7750281005260477`*^9, 3.775028170998123*^9}, {
+  3.915961530799486*^9, 3.915961546678669*^9}, {3.9159620519382052`*^9, 
+  3.9159620521703053`*^9}, {3.915962655605459*^9, 3.915962656989044*^9}, {
+  3.9159626895336695`*^9, 3.9159626899965487`*^9}, {3.915963194393556*^9, 
+  3.915963214168466*^9}, {3.918294701341568*^9, 3.9182947073931007`*^9}},
+ CellLabel->
+  "In[252]:=",ExpressionUUID->"3c2828a1-f9a3-458a-9e1f-83a7f85af149"],
+
+Cell[BoxData[
+ RowBox[{
+  InterpretationBox[
+   StyleBox[
+    SubsuperscriptBox[
+     StyleBox["r",
+      FontWeight->"Bold"], 
+     TemplateBox[{"a", 
+       StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+      "RowDefault"], 
+     TemplateBox[{
+       StyleBox["1", ShowContents -> False, StripOnInput -> False], "b"},
+      "RowDefault"]],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   $CellContext`r[$CellContext`la, $CellContext`ub],
+   Editable->False], "+", 
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      StyleBox["d", FontWeight -> "Bold"], 
+      TemplateBox[{
+        InterpretationBox[
+         StyleBox[
+          SubsuperscriptBox[
+           StyleBox["\[Omega]", FontWeight -> "Bold"], 
+           TemplateBox[{"a", 
+             StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+            "RowDefault"], 
+           TemplateBox[{
+             StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+             "b"}, "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> 
+          False], 
+         $CellContext`\[Omega][$CellContext`la, $CellContext`ub], Editable -> 
+         False]}, "RowDefault"]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`XD[
+    $CellContext`\[Omega][$CellContext`la, $CellContext`ub]],
+   Editable->False], "-", 
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox[
+         StyleBox["\[Omega]", FontWeight -> "Bold"], 
+         TemplateBox[{"a", 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], "c"}, 
+          "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+       $CellContext`\[Omega][$CellContext`la, $CellContext`uc], Editable -> 
+       False], "\"\[Wedge]\"", 
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox[
+         StyleBox["\[Omega]", FontWeight -> "Bold"], 
+         TemplateBox[{"c", 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], "b"}, 
+          "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+       $CellContext`\[Omega][$CellContext`lc, $CellContext`ub], Editable -> 
+       False]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`XP[
+    $CellContext`\[Omega][$CellContext`la, $CellContext`uc], 
+    $CellContext`\[Omega][$CellContext`lc, $CellContext`ub]],
+   Editable->False]}]], "Output",
+ CellChangeTimes->{{3.7750281422487297`*^9, 3.7750281714146523`*^9}, 
+   3.8270514990479217`*^9, 3.9159615480811586`*^9, 3.915962068569204*^9, 
+   3.9159627126424866`*^9, 3.915963215629938*^9, 3.9182947116653156`*^9},
+ CellLabel->
+  "Out[252]=",ExpressionUUID->"f363de0d-c8c2-6149-8a83-1db45a0ee770"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"cartan2Rule", "=", 
+  RowBox[{"RuleUnique", "[", 
+   RowBox[{
+    RowBox[{"XD", "[", 
+     RowBox[{"\[Omega]", "[", 
+      RowBox[{"la_", ",", "ub_"}], "]"}], "]"}], ",", 
+    RowBox[{
+     RowBox[{"-", 
+      RowBox[{"r", "[", 
+       RowBox[{"la", ",", "ub"}], "]"}]}], "+", 
+     RowBox[{
+      RowBox[{"\[Omega]", "[", 
+       RowBox[{"la", ",", "uc"}], "]"}], "\[Wedge]", 
+      RowBox[{"\[Omega]", "[", 
+       RowBox[{"lc", ",", "ub"}], "]"}]}]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.775028188174644*^9, 3.7750282817085676`*^9}, {
+  3.9159615630789547`*^9, 3.915961570623062*^9}, {3.915961872580511*^9, 
+  3.915961873132009*^9}, {3.915962084883209*^9, 3.915962085410192*^9}, {
+  3.915962722805292*^9, 3.915962727445135*^9}, {3.915963224624325*^9, 
+  3.915963227655937*^9}, {3.9182947231350822`*^9, 3.9182947285305595`*^9}},
+ CellLabel->
+  "In[253]:=",ExpressionUUID->"347921c3-0934-46f2-be56-e7fad83c6e1f"],
+
+Cell[BoxData[
+ RowBox[{
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      StyleBox["d", FontWeight -> "Bold"], 
+      TemplateBox[{
+        InterpretationBox[
+         StyleBox[
+          SubsuperscriptBox[
+           StyleBox["\[Omega]", FontWeight -> "Bold"], 
+           TemplateBox[{
+             StyleBox["la_", FontColor -> RGBColor[1, 0.5, 0]], 
+             StyleBox["ub_", FontColor -> RGBColor[1, 0.5, 0]]}, 
+            "RowDefault"], 
+           TemplateBox[{
+             StyleBox["2", ShowContents -> False, StripOnInput -> False], 
+             StyleBox["2", ShowContents -> False, StripOnInput -> False]}, 
+            "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+         $CellContext`\[Omega][
+          Pattern[$CellContext`la, 
+           Blank[]], 
+          Pattern[$CellContext`ub, 
+           Blank[]]], Editable -> False]}, "RowDefault"]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`XD[
+    $CellContext`\[Omega][
+     Pattern[$CellContext`la, 
+      Blank[]], 
+     Pattern[$CellContext`ub, 
+      Blank[]]]],
+   Editable->False], "\[RuleDelayed]", 
+  RowBox[{"DumFresh", "[", 
+   RowBox[{
+    RowBox[{"-", 
+     InterpretationBox[
+      StyleBox[
+       SubsuperscriptBox[
+        StyleBox["r",
+         FontWeight->"Bold"], 
+        TemplateBox[{"a", 
+          StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+         "RowDefault"], 
+        TemplateBox[{
+          StyleBox["1", ShowContents -> False, StripOnInput -> False], "b"},
+         "RowDefault"]],
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`r[$CellContext`la, $CellContext`ub],
+      Editable->False]}], "+", 
+    InterpretationBox[
+     StyleBox[
+      TemplateBox[{
+        InterpretationBox[
+         StyleBox[
+          SubsuperscriptBox[
+           StyleBox["\[Omega]", FontWeight -> "Bold"], 
+           TemplateBox[{"a", 
+             StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+            "RowDefault"], 
+           TemplateBox[{
+             StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+             "Latin$76782"}, "RowDefault"]], AutoSpacing -> False, 
+          ShowAutoStyles -> False], 
+         $CellContext`\[Omega][$CellContext`la, $CellContext`uLatin$76782], 
+         Editable -> False], "\"\[Wedge]\"", 
+        InterpretationBox[
+         StyleBox[
+          SubsuperscriptBox[
+           StyleBox["\[Omega]", FontWeight -> "Bold"], 
+           TemplateBox[{"Latin$76782", 
+             StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+            "RowDefault"], 
+           TemplateBox[{
+             StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+             "b"}, "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> 
+          False], 
+         $CellContext`\[Omega][$CellContext`lLatin$76782, $CellContext`ub], 
+         Editable -> False]},
+       "RowDefault"],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     mTensor`XP[
+      $CellContext`\[Omega][$CellContext`la, $CellContext`uLatin$76782], 
+      $CellContext`\[Omega][$CellContext`lLatin$76782, $CellContext`ub]],
+     Editable->False]}], "]"}]}]], "Output",
+ CellChangeTimes->{{3.775028263116653*^9, 3.7750282824886837`*^9}, 
+   3.8270515015680685`*^9, 3.9159615720181847`*^9, 3.9159618756369348`*^9, 
+   3.915962086122032*^9, 3.9159627360121784`*^9, {3.9159632170753536`*^9, 
+   3.915963228582302*^9}, 3.918294730561249*^9},
+ CellLabel->
+  "Out[253]=",ExpressionUUID->"52add9d4-e5c4-494b-a847-9796f5211425"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"cartanRule", "=", 
+  RowBox[{"{", 
+   RowBox[{"cartan1Rule", ",", "cartan2Rule"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.775028286399248*^9, 3.77502831257372*^9}},
+ CellLabel->
+  "In[254]:=",ExpressionUUID->"907df90b-162c-410c-885e-44fde1f14e8f"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    InterpretationBox[
+     StyleBox[
+      TemplateBox[{
+        StyleBox["d", FontWeight -> "Bold"], 
+        TemplateBox[{
+          InterpretationBox[
+           StyleBox[
+            SubsuperscriptBox[
+             StyleBox["e", FontWeight -> "Bold"], 
+             TemplateBox[{
+               StyleBox["ua_", FontColor -> RGBColor[1, 0.5, 0]]}, 
+              "RowDefault"], 
+             TemplateBox[{
+               StyleBox["2", ShowContents -> False, StripOnInput -> False]}, 
+              "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+           $CellContext`e[
+            Pattern[$CellContext`ua, 
+             Blank[]]], Editable -> False]}, "RowDefault"]},
+       "RowDefault"],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     mTensor`XD[
+      $CellContext`e[
+       Pattern[$CellContext`ua, 
+        Blank[]]]],
+     Editable->False], "\[RuleDelayed]", 
+    RowBox[{"DumFresh", "[", 
+     RowBox[{
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox[
+         StyleBox["t",
+          FontWeight->"Bold"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+          "RowDefault"], 
+         TemplateBox[{"a"},
+          "RowDefault"]],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`t[$CellContext`ua],
+       Editable->False], "+", 
+      InterpretationBox[
+       StyleBox[
+        TemplateBox[{
+          InterpretationBox[
+           StyleBox[
+            SubsuperscriptBox[
+             StyleBox["e", FontWeight -> "Bold"], 
+             TemplateBox[{
+               StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+              "RowDefault"], 
+             TemplateBox[{"Latin$76774"}, "RowDefault"]], AutoSpacing -> 
+            False, ShowAutoStyles -> False], 
+           $CellContext`e[$CellContext`uLatin$76774], Editable -> False], 
+          "\"\[Wedge]\"", 
+          InterpretationBox[
+           StyleBox[
+            SubsuperscriptBox[
+             StyleBox["\[Omega]", FontWeight -> "Bold"], 
+             TemplateBox[{"Latin$76774", 
+               StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+              "RowDefault"], 
+             TemplateBox[{
+               StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+               "a"}, "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> 
+            False], 
+           $CellContext`\[Omega][$CellContext`lLatin$76774, $CellContext`ua], 
+           Editable -> False]},
+         "RowDefault"],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       mTensor`XP[
+        $CellContext`e[$CellContext`uLatin$76774], 
+        $CellContext`\[Omega][$CellContext`lLatin$76774, $CellContext`ua]],
+       Editable->False]}], "]"}]}], ",", 
+   RowBox[{
+    InterpretationBox[
+     StyleBox[
+      TemplateBox[{
+        StyleBox["d", FontWeight -> "Bold"], 
+        TemplateBox[{
+          InterpretationBox[
+           StyleBox[
+            SubsuperscriptBox[
+             StyleBox["\[Omega]", FontWeight -> "Bold"], 
+             TemplateBox[{
+               StyleBox["la_", FontColor -> RGBColor[1, 0.5, 0]], 
+               StyleBox["ub_", FontColor -> RGBColor[1, 0.5, 0]]}, 
+              "RowDefault"], 
+             TemplateBox[{
+               StyleBox["2", ShowContents -> False, StripOnInput -> False], 
+               StyleBox["2", ShowContents -> False, StripOnInput -> False]}, 
+              "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+           $CellContext`\[Omega][
+            Pattern[$CellContext`la, 
+             Blank[]], 
+            Pattern[$CellContext`ub, 
+             Blank[]]], Editable -> False]}, "RowDefault"]},
+       "RowDefault"],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     mTensor`XD[
+      $CellContext`\[Omega][
+       Pattern[$CellContext`la, 
+        Blank[]], 
+       Pattern[$CellContext`ub, 
+        Blank[]]]],
+     Editable->False], "\[RuleDelayed]", 
+    RowBox[{"DumFresh", "[", 
+     RowBox[{
+      RowBox[{"-", 
+       InterpretationBox[
+        StyleBox[
+         SubsuperscriptBox[
+          StyleBox["r",
+           FontWeight->"Bold"], 
+          TemplateBox[{"a", 
+            StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+           "RowDefault"], 
+          TemplateBox[{
+            StyleBox["1", ShowContents -> False, StripOnInput -> False], "b"},
+           "RowDefault"]],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`r[$CellContext`la, $CellContext`ub],
+        Editable->False]}], "+", 
+      InterpretationBox[
+       StyleBox[
+        TemplateBox[{
+          InterpretationBox[
+           StyleBox[
+            SubsuperscriptBox[
+             StyleBox["\[Omega]", FontWeight -> "Bold"], 
+             TemplateBox[{"a", 
+               StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+              "RowDefault"], 
+             TemplateBox[{
+               StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+               "Latin$76782"}, "RowDefault"]], AutoSpacing -> False, 
+            ShowAutoStyles -> False], 
+           $CellContext`\[Omega][$CellContext`la, $CellContext`uLatin$76782], 
+           Editable -> False], "\"\[Wedge]\"", 
+          InterpretationBox[
+           StyleBox[
+            SubsuperscriptBox[
+             StyleBox["\[Omega]", FontWeight -> "Bold"], 
+             TemplateBox[{"Latin$76782", 
+               StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+              "RowDefault"], 
+             TemplateBox[{
+               StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+               "b"}, "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> 
+            False], 
+           $CellContext`\[Omega][$CellContext`lLatin$76782, $CellContext`ub], 
+           Editable -> False]},
+         "RowDefault"],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       mTensor`XP[
+        $CellContext`\[Omega][$CellContext`la, $CellContext`uLatin$76782], 
+        $CellContext`\[Omega][$CellContext`lLatin$76782, $CellContext`ub]],
+       Editable->False]}], "]"}]}]}], "}"}]], "Output",
+ CellChangeTimes->{3.775028315831026*^9, 3.775028574119101*^9, 
+  3.827051507633387*^9, 3.915961574793529*^9, 3.915961797142769*^9, 
+  3.9159618763491135`*^9, 3.9159620868928185`*^9, 3.9159627377434*^9, 
+  3.9159632295525913`*^9, 3.918294735040228*^9},
+ CellLabel->
+  "Out[254]=",ExpressionUUID->"b283ed75-169b-624b-b6f7-c09a0e31529e"]
+}, Open  ]],
+
+Cell["\:bbf8\:bd84 \:d615\:c2dd\:c73c\:b85c \:d45c\:d604\:b41c \:be44\:c559\
+\:d0a4 \:d56d\:b4f1\:c2dd 1:", "Text",
+ CellChangeTimes->{3.827051517861441*^9, 
+  3.915961577021813*^9},ExpressionUUID->"1d58fec1-04c7-4751-822f-\
+79100fe09d8e"],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{"d", "\[InvisibleComma]", 
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["t", "a"], "+", 
+     RowBox[{
+      SuperscriptBox["t", "p"], "\[Wedge]", 
+      SuperscriptBox[
+       SubscriptBox["\[Omega]", "p"], "a"]}]}], "=", 
+    RowBox[{
+     RowBox[{"-", 
+      SuperscriptBox["e", "p"]}], "\[Wedge]", 
+     SuperscriptBox[
+      SubscriptBox["r", "p"], "a"]}]}]}], TraditionalForm]],
+ FormatType->
+  TraditionalForm,ExpressionUUID->"cb82d590-a97d-384b-9fad-8fb8e5c98df6"]], \
+"Text",
+ CellChangeTimes->{{3.918294747696911*^9, 3.918294784303461*^9}, {
+  3.918295351357952*^9, 3.9182953526349144`*^9}},
+ TextAlignment->Center,ExpressionUUID->"40f84998-a820-7f4f-bae2-df1e7100d75a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"XD", "[", "cartan1", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "/.", "cartanRule"}], "\[IndentingNewLine]", 
+ RowBox[{"ToTensor", "[", 
+  RowBox[{"%", ",", 
+   RowBox[{"{", 
+    RowBox[{"lp", ",", "lq", ",", "lr"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7750283199753265`*^9, 3.7750283256299133`*^9}, {
+  3.915961675741951*^9, 3.915961693605827*^9}},
+ CellLabel->
+  "In[255]:=",ExpressionUUID->"897a066b-7579-4f02-ab3b-ce967cedf5d6"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   InterpretationBox[
+    StyleBox[
+     TemplateBox[{
+       StyleBox["d", FontWeight -> "Bold"], 
+       TemplateBox[{
+         InterpretationBox[
+          StyleBox[
+           SubsuperscriptBox[
+            StyleBox["t", FontWeight -> "Bold"], 
+            TemplateBox[{
+              StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+             "RowDefault"], 
+            TemplateBox[{"a"}, "RowDefault"]], AutoSpacing -> False, 
+           ShowAutoStyles -> False], 
+          $CellContext`t[$CellContext`ua], Editable -> False]}, "RowDefault"]},
+      "RowDefault"],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    mTensor`XD[
+     $CellContext`t[$CellContext`ua]],
+    Editable->False]}], "+", 
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox[
+         StyleBox["e", FontWeight -> "Bold"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"], 
+         TemplateBox[{"b"}, "RowDefault"]], AutoSpacing -> False, 
+        ShowAutoStyles -> False], 
+       $CellContext`e[$CellContext`ub], Editable -> False], "\"\[Wedge]\"", 
+      InterpretationBox[
+       StyleBox[
+        TemplateBox[{
+          StyleBox["d", FontWeight -> "Bold"], 
+          TemplateBox[{
+            InterpretationBox[
+             StyleBox[
+              SubsuperscriptBox[
+               StyleBox["\[Omega]", FontWeight -> "Bold"], 
+               TemplateBox[{"b", 
+                 StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+                 "RowDefault"], 
+               TemplateBox[{
+                 StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+                 "a"}, "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> 
+              False], 
+             $CellContext`\[Omega][$CellContext`lb, $CellContext`ua], 
+             Editable -> False]}, "RowDefault"]}, "RowDefault"], AutoSpacing -> 
+        False, ShowAutoStyles -> False], 
+       mTensor`XD[
+        $CellContext`\[Omega][$CellContext`lb, $CellContext`ua]], Editable -> 
+       False]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`XP[
+    $CellContext`e[$CellContext`ub], 
+    mTensor`XD[
+     $CellContext`\[Omega][$CellContext`lb, $CellContext`ua]]],
+   Editable->False], "-", 
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox[
+         StyleBox["\[Omega]", FontWeight -> "Bold"], 
+         TemplateBox[{"b", 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], "a"}, 
+          "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+       $CellContext`\[Omega][$CellContext`lb, $CellContext`ua], Editable -> 
+       False], "\"\[Wedge]\"", 
+      InterpretationBox[
+       StyleBox[
+        TemplateBox[{
+          StyleBox["d", FontWeight -> "Bold"], 
+          TemplateBox[{
+            InterpretationBox[
+             StyleBox[
+              SubsuperscriptBox[
+               StyleBox["e", FontWeight -> "Bold"], 
+               TemplateBox[{
+                 StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+                 "RowDefault"], 
+               TemplateBox[{"b"}, "RowDefault"]], AutoSpacing -> False, 
+              ShowAutoStyles -> False], 
+             $CellContext`e[$CellContext`ub], Editable -> False]}, 
+           "RowDefault"]}, "RowDefault"], AutoSpacing -> False, 
+        ShowAutoStyles -> False], 
+       mTensor`XD[
+        $CellContext`e[$CellContext`ub]], Editable -> False]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`XP[
+    $CellContext`\[Omega][$CellContext`lb, $CellContext`ua], 
+    mTensor`XD[
+     $CellContext`e[$CellContext`ub]]],
+   Editable->False]}]], "Output",
+ CellChangeTimes->{
+  3.7750283263490963`*^9, 3.77502838775146*^9, 3.775028510309467*^9, 
+   3.775028578037659*^9, 3.827051575337396*^9, {3.915961670547306*^9, 
+   3.915961694181455*^9}, {3.915961780197018*^9, 3.915961801084938*^9}, 
+   3.9159618776953573`*^9, 3.915962090570118*^9, 3.9159627419336853`*^9, 
+   3.915963233163725*^9, 3.918294811776861*^9},
+ CellLabel->
+  "Out[255]=",ExpressionUUID->"8ed730f2-f368-ec42-b5d1-a1db399b5476"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   InterpretationBox[
+    StyleBox[
+     TemplateBox[{
+       StyleBox["d", FontWeight -> "Bold"], 
+       TemplateBox[{
+         InterpretationBox[
+          StyleBox[
+           SubsuperscriptBox[
+            StyleBox["t", FontWeight -> "Bold"], 
+            TemplateBox[{
+              StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+             "RowDefault"], 
+            TemplateBox[{"a"}, "RowDefault"]], AutoSpacing -> False, 
+           ShowAutoStyles -> False], 
+          $CellContext`t[$CellContext`ua], Editable -> False]}, "RowDefault"]},
+      "RowDefault"],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    mTensor`XD[
+     $CellContext`t[$CellContext`ua]],
+    Editable->False]}], "-", 
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox[
+         StyleBox["e", FontWeight -> "Bold"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"], 
+         TemplateBox[{"b"}, "RowDefault"]], AutoSpacing -> False, 
+        ShowAutoStyles -> False], 
+       $CellContext`e[$CellContext`ub], Editable -> False], "\"\[Wedge]\"", 
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox[
+         StyleBox["r", FontWeight -> "Bold"], 
+         TemplateBox[{"b", 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], "a"}, 
+          "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+       $CellContext`r[$CellContext`lb, $CellContext`ua], Editable -> False]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`XP[
+    $CellContext`e[$CellContext`ub], 
+    $CellContext`r[$CellContext`lb, $CellContext`ua]],
+   Editable->False], "-", 
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox[
+         StyleBox["\[Omega]", FontWeight -> "Bold"], 
+         TemplateBox[{"b", 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], "a"}, 
+          "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+       $CellContext`\[Omega][$CellContext`lb, $CellContext`ua], Editable -> 
+       False], "\"\[Wedge]\"", 
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox[
+         StyleBox["t", FontWeight -> "Bold"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"], 
+         TemplateBox[{"b"}, "RowDefault"]], AutoSpacing -> False, 
+        ShowAutoStyles -> False], 
+       $CellContext`t[$CellContext`ub], Editable -> False]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`XP[
+    $CellContext`\[Omega][$CellContext`lb, $CellContext`ua], 
+    $CellContext`t[$CellContext`ub]],
+   Editable->False]}]], "Output",
+ CellChangeTimes->{
+  3.7750283263490963`*^9, 3.77502838775146*^9, 3.775028510309467*^9, 
+   3.775028578037659*^9, 3.827051575337396*^9, {3.915961670547306*^9, 
+   3.915961694181455*^9}, {3.915961780197018*^9, 3.915961801084938*^9}, 
+   3.9159618776953573`*^9, 3.915962090570118*^9, 3.9159627419336853`*^9, 
+   3.915963233163725*^9, 3.918294811792494*^9},
+ CellLabel->
+  "Out[256]=",ExpressionUUID->"e6e6697b-db0d-ab4d-911c-8e88d86cf832"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   InterpretationBox[
+    StyleBox[
+     TemplateBox[{
+       SubscriptBox["\[Del]", "p"], 
+       InterpretationBox[
+        StyleBox[
+         SubsuperscriptBox["t", 
+          TemplateBox[{"q", "r", 
+            StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+           "RowDefault"], 
+          TemplateBox[{
+            StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+            StyleBox["1", ShowContents -> False, StripOnInput -> False], "a"},
+            "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+        $CellContext`t[$CellContext`lq, $CellContext`lr, $CellContext`ua], 
+        Editable -> False]},
+      "RowDefault"],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    mTensor`CD[$CellContext`lp, 
+     $CellContext`t[$CellContext`lq, $CellContext`lr, $CellContext`ua]],
+    Editable->False]}], "+", 
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      SubscriptBox["\[Del]", "q"], 
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox["t", 
+         TemplateBox[{"p", "r", 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], "a"}, 
+          "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+       $CellContext`t[$CellContext`lp, $CellContext`lr, $CellContext`ua], 
+       Editable -> False]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`CD[$CellContext`lq, 
+    $CellContext`t[$CellContext`lp, $CellContext`lr, $CellContext`ua]],
+   Editable->False], "-", 
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      SubscriptBox["\[Del]", "r"], 
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox["t", 
+         TemplateBox[{"p", "q", 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], "a"}, 
+          "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+       $CellContext`t[$CellContext`lp, $CellContext`lq, $CellContext`ua], 
+       Editable -> False]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`CD[$CellContext`lr, 
+    $CellContext`t[$CellContext`lp, $CellContext`lq, $CellContext`ua]],
+   Editable->False], "-", 
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["e", 
+      TemplateBox[{"r", 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], "b"},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`e[$CellContext`lr, $CellContext`ub],
+    Editable->False], " ", 
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["r", 
+      TemplateBox[{"p", "q", "b", 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], "a"},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`r[$CellContext`lp, $CellContext`lq, $CellContext`lb, \
+$CellContext`ua],
+    Editable->False]}], "+", 
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["e", 
+      TemplateBox[{"q", 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], "b"},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`e[$CellContext`lq, $CellContext`ub],
+    Editable->False], " ", 
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["r", 
+      TemplateBox[{"p", "r", "b", 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], "a"},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`r[$CellContext`lp, $CellContext`lr, $CellContext`lb, \
+$CellContext`ua],
+    Editable->False]}], "-", 
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["e", 
+      TemplateBox[{"p", 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], "b"},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`e[$CellContext`lp, $CellContext`ub],
+    Editable->False], " ", 
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["r", 
+      TemplateBox[{"q", "r", "b", 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], "a"},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`r[$CellContext`lq, $CellContext`lr, $CellContext`lb, \
+$CellContext`ua],
+    Editable->False]}], "-", 
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["t", 
+      TemplateBox[{"q", "r", 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], "b"},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`t[$CellContext`lq, $CellContext`lr, $CellContext`ub],
+    Editable->False], " ", 
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["\[Omega]", 
+      TemplateBox[{"p", "b", 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], "a"},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`\[Omega][$CellContext`lp, $CellContext`lb, $CellContext`ua],
+    Editable->False]}], "+", 
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["t", 
+      TemplateBox[{"p", "r", 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], "b"},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`t[$CellContext`lp, $CellContext`lr, $CellContext`ub],
+    Editable->False], " ", 
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["\[Omega]", 
+      TemplateBox[{"q", "b", 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], "a"},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`\[Omega][$CellContext`lq, $CellContext`lb, $CellContext`ua],
+    Editable->False]}], "-", 
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["t", 
+      TemplateBox[{"p", "q", 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], "b"},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`t[$CellContext`lp, $CellContext`lq, $CellContext`ub],
+    Editable->False], " ", 
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["\[Omega]", 
+      TemplateBox[{"r", "b", 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], "a"},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`\[Omega][$CellContext`lr, $CellContext`lb, $CellContext`ua],
+    Editable->False]}]}]], "Output",
+ CellChangeTimes->{
+  3.7750283263490963`*^9, 3.77502838775146*^9, 3.775028510309467*^9, 
+   3.775028578037659*^9, 3.827051575337396*^9, {3.915961670547306*^9, 
+   3.915961694181455*^9}, {3.915961780197018*^9, 3.915961801084938*^9}, 
+   3.9159618776953573`*^9, 3.915962090570118*^9, 3.9159627419336853`*^9, 
+   3.915963233163725*^9, 3.9182948118081207`*^9},
+ CellLabel->
+  "Out[257]=",ExpressionUUID->"ea8bb840-6ac1-da4d-b486-dd88d773610a"]
+}, Open  ]],
+
+Cell["\:bbf8\:bd84 \:d615\:c2dd\:c73c\:b85c \:d45c\:d604\:b41c \:be44\:c559\
+\:d0a4 \:d56d\:b4f1\:c2dd 2:", "Text",
+ CellChangeTimes->{
+  3.827051517861441*^9, {3.827051617339717*^9, 3.827051617516397*^9}, 
+   3.9159633099192963`*^9},ExpressionUUID->"f120dfcb-29d5-4071-9bd9-\
+630d4dcd7998"],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{"d", "\[InvisibleComma]", 
+   RowBox[{
+    RowBox[{
+     SuperscriptBox[
+      SubscriptBox["r", "a"], "b"], "-", 
+     RowBox[{
+      SuperscriptBox[
+       SubscriptBox["\[Omega]", "a"], "p"], "\[Wedge]", 
+      SuperscriptBox[
+       SubscriptBox["r", "p"], "b"]}], "+", 
+     RowBox[{
+      SuperscriptBox[
+       SubscriptBox["r", "a"], "p"], "\[Wedge]", 
+      SuperscriptBox[
+       SubscriptBox["\[Omega]", "p"], "b"]}]}], "=", "0"}]}], 
+  TraditionalForm]],
+ FormatType->
+  TraditionalForm,ExpressionUUID->"7701c514-0ae1-a74e-b3f8-f1d8a7b7eedb"]], \
+"Text",
+ CellChangeTimes->{{3.918295522221369*^9, 3.9182956042488003`*^9}},
+ TextAlignment->Center,ExpressionUUID->"bcbdd06b-2e95-5f4c-99ec-e8699b07c694"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"XD", "[", "cartan2", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"%", "/.", "cartanRule"}]}], "Input",
+ CellChangeTimes->{{3.775028602717675*^9, 3.7750286073344316`*^9}, {
+  3.915963321574892*^9, 3.91596332201486*^9}},
+ CellLabel->
+  "In[258]:=",ExpressionUUID->"13543d96-5049-4e79-a6a1-aaf628ebc528"],
+
+Cell[BoxData[
+ RowBox[{
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      StyleBox["d", FontWeight -> "Bold"], 
+      TemplateBox[{
+        InterpretationBox[
+         StyleBox[
+          SubsuperscriptBox[
+           StyleBox["r", FontWeight -> "Bold"], 
+           TemplateBox[{"a", 
+             StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+            "RowDefault"], 
+           TemplateBox[{
+             StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+             "b"}, "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> 
+          False], 
+         $CellContext`r[$CellContext`la, $CellContext`ub], Editable -> 
+         False]}, "RowDefault"]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`XD[
+    $CellContext`r[$CellContext`la, $CellContext`ub]],
+   Editable->False], "+", 
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox[
+         StyleBox["\[Omega]", FontWeight -> "Bold"], 
+         TemplateBox[{"a", 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], "c"}, 
+          "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+       $CellContext`\[Omega][$CellContext`la, $CellContext`uc], Editable -> 
+       False], "\"\[Wedge]\"", 
+      InterpretationBox[
+       StyleBox[
+        TemplateBox[{
+          StyleBox["d", FontWeight -> "Bold"], 
+          TemplateBox[{
+            InterpretationBox[
+             StyleBox[
+              SubsuperscriptBox[
+               StyleBox["\[Omega]", FontWeight -> "Bold"], 
+               TemplateBox[{"c", 
+                 StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+                 "RowDefault"], 
+               TemplateBox[{
+                 StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+                 "b"}, "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> 
+              False], 
+             $CellContext`\[Omega][$CellContext`lc, $CellContext`ub], 
+             Editable -> False]}, "RowDefault"]}, "RowDefault"], AutoSpacing -> 
+        False, ShowAutoStyles -> False], 
+       mTensor`XD[
+        $CellContext`\[Omega][$CellContext`lc, $CellContext`ub]], Editable -> 
+       False]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`XP[
+    $CellContext`\[Omega][$CellContext`la, $CellContext`uc], 
+    mTensor`XD[
+     $CellContext`\[Omega][$CellContext`lc, $CellContext`ub]]],
+   Editable->False], "-", 
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox[
+         StyleBox["\[Omega]", FontWeight -> "Bold"], 
+         TemplateBox[{"c", 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], "b"}, 
+          "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+       $CellContext`\[Omega][$CellContext`lc, $CellContext`ub], Editable -> 
+       False], "\"\[Wedge]\"", 
+      InterpretationBox[
+       StyleBox[
+        TemplateBox[{
+          StyleBox["d", FontWeight -> "Bold"], 
+          TemplateBox[{
+            InterpretationBox[
+             StyleBox[
+              SubsuperscriptBox[
+               StyleBox["\[Omega]", FontWeight -> "Bold"], 
+               TemplateBox[{"a", 
+                 StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+                 "RowDefault"], 
+               TemplateBox[{
+                 StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+                 "c"}, "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> 
+              False], 
+             $CellContext`\[Omega][$CellContext`la, $CellContext`uc], 
+             Editable -> False]}, "RowDefault"]}, "RowDefault"], AutoSpacing -> 
+        False, ShowAutoStyles -> False], 
+       mTensor`XD[
+        $CellContext`\[Omega][$CellContext`la, $CellContext`uc]], Editable -> 
+       False]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`XP[
+    $CellContext`\[Omega][$CellContext`lc, $CellContext`ub], 
+    mTensor`XD[
+     $CellContext`\[Omega][$CellContext`la, $CellContext`uc]]],
+   Editable->False]}]], "Output",
+ CellChangeTimes->{3.775028607761948*^9, 3.8270516699613805`*^9, 
+  3.915963322814195*^9, 3.918295617115116*^9},
+ CellLabel->
+  "Out[258]=",ExpressionUUID->"178b8f7c-0711-ed4f-bb4a-d5ffbe612cca"],
+
+Cell[BoxData[
+ RowBox[{
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      StyleBox["d", FontWeight -> "Bold"], 
+      TemplateBox[{
+        InterpretationBox[
+         StyleBox[
+          SubsuperscriptBox[
+           StyleBox["r", FontWeight -> "Bold"], 
+           TemplateBox[{"a", 
+             StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+            "RowDefault"], 
+           TemplateBox[{
+             StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+             "b"}, "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> 
+          False], 
+         $CellContext`r[$CellContext`la, $CellContext`ub], Editable -> 
+         False]}, "RowDefault"]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`XD[
+    $CellContext`r[$CellContext`la, $CellContext`ub]],
+   Editable->False], "-", 
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox[
+         StyleBox["\[Omega]", FontWeight -> "Bold"], 
+         TemplateBox[{"a", 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], "c"}, 
+          "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+       $CellContext`\[Omega][$CellContext`la, $CellContext`uc], Editable -> 
+       False], "\"\[Wedge]\"", 
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox[
+         StyleBox["r", FontWeight -> "Bold"], 
+         TemplateBox[{"c", 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], "b"}, 
+          "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+       $CellContext`r[$CellContext`lc, $CellContext`ub], Editable -> False]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`XP[
+    $CellContext`\[Omega][$CellContext`la, $CellContext`uc], 
+    $CellContext`r[$CellContext`lc, $CellContext`ub]],
+   Editable->False], "+", 
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox[
+         StyleBox["\[Omega]", FontWeight -> "Bold"], 
+         TemplateBox[{"c", 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], "b"}, 
+          "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+       $CellContext`\[Omega][$CellContext`lc, $CellContext`ub], Editable -> 
+       False], "\"\[Wedge]\"", 
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox[
+         StyleBox["r", FontWeight -> "Bold"], 
+         TemplateBox[{"a", 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], "c"}, 
+          "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+       $CellContext`r[$CellContext`la, $CellContext`uc], Editable -> False]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`XP[
+    $CellContext`\[Omega][$CellContext`lc, $CellContext`ub], 
+    $CellContext`r[$CellContext`la, $CellContext`uc]],
+   Editable->False]}]], "Output",
+ CellChangeTimes->{3.775028607761948*^9, 3.8270516699613805`*^9, 
+  3.915963322814195*^9, 3.918295617131344*^9},
+ CellLabel->
+  "Out[259]=",ExpressionUUID->"35dbad17-2ef6-be44-8c8a-4500e7ba6b7a"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"bianchi", "=", "%"}], ";"}]], "Input",
+ CellChangeTimes->{{3.7750286376770205`*^9, 3.77502864414069*^9}},
+ CellLabel->
+  "In[260]:=",ExpressionUUID->"e940a0de-3050-441d-867e-ebbc4f223c4d"],
+
+Cell["IndexedForm \:d45c\:d604\:acfc IndexedTensor \:d45c\:d604\:c758 \:be44\
+\:ad50:", "Text",
+ CellChangeTimes->{
+  3.8270517013740253`*^9},ExpressionUUID->"aa646a9b-60ac-4827-8328-\
+bda49df1864e"],
+
+Cell[BoxData[
+ RowBox[{"Off", "[", "XDtoCDfrag", "]"}]], "Input",
+ CellChangeTimes->{{3.7750286816791162`*^9, 3.775028686758356*^9}},
+ CellLabel->
+  "In[261]:=",ExpressionUUID->"97bc8b6f-4272-4134-b29f-e81eaeb62a61"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{"cartan2", "\[IndentingNewLine]", 
+ RowBox[{"ToTensor", "[", 
+  RowBox[{"%", ",", 
+   RowBox[{"{", 
+    RowBox[{"ld", ",", "le"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.775028672950018*^9, 3.7750286746530867`*^9}, {
+  3.9182957025048046`*^9, 3.9182957055871677`*^9}},
+ CellLabel->
+  "In[262]:=",ExpressionUUID->"d6f2bdb6-ceb3-40fb-b3ea-696bd48b4248"],
+
+Cell[BoxData[
+ RowBox[{
+  InterpretationBox[
+   StyleBox[
+    SubsuperscriptBox[
+     StyleBox["r",
+      FontWeight->"Bold"], 
+     TemplateBox[{"a", 
+       StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+      "RowDefault"], 
+     TemplateBox[{
+       StyleBox["1", ShowContents -> False, StripOnInput -> False], "b"},
+      "RowDefault"]],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   $CellContext`r[$CellContext`la, $CellContext`ub],
+   Editable->False], "+", 
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      StyleBox["d", FontWeight -> "Bold"], 
+      TemplateBox[{
+        InterpretationBox[
+         StyleBox[
+          SubsuperscriptBox[
+           StyleBox["\[Omega]", FontWeight -> "Bold"], 
+           TemplateBox[{"a", 
+             StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+            "RowDefault"], 
+           TemplateBox[{
+             StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+             "b"}, "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> 
+          False], 
+         $CellContext`\[Omega][$CellContext`la, $CellContext`ub], Editable -> 
+         False]}, "RowDefault"]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`XD[
+    $CellContext`\[Omega][$CellContext`la, $CellContext`ub]],
+   Editable->False], "-", 
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox[
+         StyleBox["\[Omega]", FontWeight -> "Bold"], 
+         TemplateBox[{"a", 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], "c"}, 
+          "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+       $CellContext`\[Omega][$CellContext`la, $CellContext`uc], Editable -> 
+       False], "\"\[Wedge]\"", 
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox[
+         StyleBox["\[Omega]", FontWeight -> "Bold"], 
+         TemplateBox[{"c", 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], "b"}, 
+          "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+       $CellContext`\[Omega][$CellContext`lc, $CellContext`ub], Editable -> 
+       False]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`XP[
+    $CellContext`\[Omega][$CellContext`la, $CellContext`uc], 
+    $CellContext`\[Omega][$CellContext`lc, $CellContext`ub]],
+   Editable->False]}]], "Output",
+ CellChangeTimes->{3.77502867514353*^9, 3.827051705866884*^9, 
+  3.915963385636965*^9, 3.9182957067647133`*^9},
+ CellLabel->
+  "Out[262]=",ExpressionUUID->"40eeabde-0961-9a4f-8755-1f2ed62880aa"],
+
+Cell[BoxData[
+ RowBox[{
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      SubscriptBox["\[PartialD]", "d"], 
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox["\[Omega]", 
+         TemplateBox[{"e", "a", 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], "b"}, 
+          "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+       $CellContext`\[Omega][$CellContext`le, $CellContext`la, \
+$CellContext`ub], Editable -> False]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`BD[$CellContext`ld, 
+    $CellContext`\[Omega][$CellContext`le, $CellContext`la, $CellContext`ub]],
+   Editable->False], "-", 
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      SubscriptBox["\[PartialD]", "e"], 
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox["\[Omega]", 
+         TemplateBox[{"d", "a", 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], "b"}, 
+          "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+       $CellContext`\[Omega][$CellContext`ld, $CellContext`la, \
+$CellContext`ub], Editable -> False]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`BD[$CellContext`le, 
+    $CellContext`\[Omega][$CellContext`ld, $CellContext`la, $CellContext`ub]],
+   Editable->False], "+", 
+  InterpretationBox[
+   StyleBox[
+    SubsuperscriptBox["r", 
+     TemplateBox[{"d", "e", "a", 
+       StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+      "RowDefault"], 
+     TemplateBox[{
+       StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+       StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+       StyleBox["1", ShowContents -> False, StripOnInput -> False], "b"},
+      "RowDefault"]],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   $CellContext`r[$CellContext`ld, $CellContext`le, $CellContext`la, \
+$CellContext`ub],
+   Editable->False], "+", 
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["\[Omega]", 
+      TemplateBox[{"d", "c", 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], "b"},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`\[Omega][$CellContext`ld, $CellContext`lc, $CellContext`ub],
+    Editable->False], " ", 
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["\[Omega]", 
+      TemplateBox[{"e", "a", 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], "c"},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`\[Omega][$CellContext`le, $CellContext`la, $CellContext`uc],
+    Editable->False]}], "-", 
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["\[Omega]", 
+      TemplateBox[{"d", "a", 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], "c"},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`\[Omega][$CellContext`ld, $CellContext`la, $CellContext`uc],
+    Editable->False], " ", 
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["\[Omega]", 
+      TemplateBox[{"e", "c", 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], "b"},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`\[Omega][$CellContext`le, $CellContext`lc, $CellContext`ub],
+    Editable->False]}]}]], "Output",
+ CellChangeTimes->{3.77502867514353*^9, 3.827051705866884*^9, 
+  3.915963385636965*^9, 3.9182957067647133`*^9},
+ CellLabel->
+  "Out[263]=",ExpressionUUID->"67780100-936e-8e4a-9e3f-b238d21c78f0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RiemannToGamma", "[", 
+  RowBox[{"RiemannCD", "[", 
+   RowBox[{"ld", ",", "le", ",", "la", ",", "ub"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.775028734095673*^9, 3.775028758406107*^9}},
+ CellLabel->
+  "In[264]:=",ExpressionUUID->"65c85098-b5de-455b-b288-b18d03be4aeb"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   InterpretationBox[
+    StyleBox[
+     TemplateBox[{
+       SubscriptBox["\[PartialD]", "d"], 
+       InterpretationBox[
+        StyleBox[
+         SubsuperscriptBox["\[CapitalGamma]", 
+          TemplateBox[{"e", "a", 
+            StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+           "RowDefault"], 
+          TemplateBox[{
+            StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+            StyleBox["1", ShowContents -> False, StripOnInput -> False], "b"},
+            "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+        mTensor`GammaCD[$CellContext`le, $CellContext`la, $CellContext`ub], 
+        Editable -> False]},
+      "RowDefault"],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    mTensor`BD[$CellContext`ld, 
+     mTensor`GammaCD[$CellContext`le, $CellContext`la, $CellContext`ub]],
+    Editable->False]}], "+", 
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      SubscriptBox["\[PartialD]", "e"], 
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox["\[CapitalGamma]", 
+         TemplateBox[{"d", "a", 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], "b"}, 
+          "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+       mTensor`GammaCD[$CellContext`ld, $CellContext`la, $CellContext`ub], 
+       Editable -> False]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`BD[$CellContext`le, 
+    mTensor`GammaCD[$CellContext`ld, $CellContext`la, $CellContext`ub]],
+   Editable->False], "-", 
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["\[CapitalGamma]", 
+      TemplateBox[{"d", "c", 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], "b"},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    mTensor`GammaCD[$CellContext`ld, $CellContext`lc, $CellContext`ub],
+    Editable->False], " ", 
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["\[CapitalGamma]", 
+      TemplateBox[{"e", "a", 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], "c"},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    mTensor`GammaCD[$CellContext`le, $CellContext`la, $CellContext`uc],
+    Editable->False]}], "+", 
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["\[CapitalGamma]", 
+      TemplateBox[{"d", "a", 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], "c"},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    mTensor`GammaCD[$CellContext`ld, $CellContext`la, $CellContext`uc],
+    Editable->False], " ", 
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["\[CapitalGamma]", 
+      TemplateBox[{"e", "c", 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], "b"},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    mTensor`GammaCD[$CellContext`le, $CellContext`lc, $CellContext`ub],
+    Editable->False]}]}]], "Output",
+ CellChangeTimes->{{3.775028745321941*^9, 3.77502875898945*^9}, 
+   3.827051718112328*^9, 3.915963462621296*^9, 3.918295755250946*^9},
+ CellLabel->
+  "Out[264]=",ExpressionUUID->"d839cd5f-42e0-a44d-9e33-b5febe56b232"]
+}, Open  ]],
+
+Cell[TextData[{
+ "\:b530\:b77c\:c11c ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox[
+     SubscriptBox["\[CapitalGamma]", 
+      RowBox[{"a", "\[InvisibleSpace]", "b"}]], "c"], "=", 
+    SuperscriptBox[
+     SubscriptBox["\[Omega]", 
+      RowBox[{"a", "\[InvisibleSpace]", "b"}]], "c"]}], TraditionalForm]],
+  ExpressionUUID->"dac6449f-feb7-482b-9fa1-6a870ac5057a"],
+ ". Torsion-free\:c778 \:acbd\:c6b0 ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox[
+     SubscriptBox["\[Omega]", 
+      RowBox[{"a", "\[InvisibleSpace]", "b"}]], "c"], "=", 
+    SuperscriptBox[
+     SubscriptBox["\[Omega]", 
+      RowBox[{"(", 
+       RowBox[{"a", "\[InvisibleSpace]", "b"}], ")"}]], "c"]}], 
+   TraditionalForm]],ExpressionUUID->"e3d34aaf-ed49-440c-828e-f32701365b0a"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.8270517413263927`*^9, 3.827051828164407*^9}, {
+  3.915964160853548*^9, 
+  3.915964167121371*^9}},ExpressionUUID->"26d20216-53c6-4037-9b0c-\
+dca0d2d95827"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{"bianchi", "\[IndentingNewLine]", 
+ RowBox[{"ToTensor", "[", 
+  RowBox[{"%", ",", 
+   RowBox[{"{", 
+    RowBox[{"lc", ",", "ld", ",", "le"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7750287687753487`*^9, 3.775028770645225*^9}, {
+  3.918295777467657*^9, 3.9182957779574986`*^9}},
+ CellLabel->
+  "In[265]:=",ExpressionUUID->"488e82a4-fc08-4890-8ad7-0193bebdd7e8"],
+
+Cell[BoxData[
+ RowBox[{
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      StyleBox["d", FontWeight -> "Bold"], 
+      TemplateBox[{
+        InterpretationBox[
+         StyleBox[
+          SubsuperscriptBox[
+           StyleBox["r", FontWeight -> "Bold"], 
+           TemplateBox[{"a", 
+             StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+            "RowDefault"], 
+           TemplateBox[{
+             StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+             "b"}, "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> 
+          False], 
+         $CellContext`r[$CellContext`la, $CellContext`ub], Editable -> 
+         False]}, "RowDefault"]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`XD[
+    $CellContext`r[$CellContext`la, $CellContext`ub]],
+   Editable->False], "-", 
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox[
+         StyleBox["\[Omega]", FontWeight -> "Bold"], 
+         TemplateBox[{"a", 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], "c"}, 
+          "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+       $CellContext`\[Omega][$CellContext`la, $CellContext`uc], Editable -> 
+       False], "\"\[Wedge]\"", 
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox[
+         StyleBox["r", FontWeight -> "Bold"], 
+         TemplateBox[{"c", 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], "b"}, 
+          "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+       $CellContext`r[$CellContext`lc, $CellContext`ub], Editable -> False]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`XP[
+    $CellContext`\[Omega][$CellContext`la, $CellContext`uc], 
+    $CellContext`r[$CellContext`lc, $CellContext`ub]],
+   Editable->False], "+", 
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox[
+         StyleBox["\[Omega]", FontWeight -> "Bold"], 
+         TemplateBox[{"c", 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], "b"}, 
+          "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+       $CellContext`\[Omega][$CellContext`lc, $CellContext`ub], Editable -> 
+       False], "\"\[Wedge]\"", 
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox[
+         StyleBox["r", FontWeight -> "Bold"], 
+         TemplateBox[{"a", 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], "c"}, 
+          "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+       $CellContext`r[$CellContext`la, $CellContext`uc], Editable -> False]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`XP[
+    $CellContext`\[Omega][$CellContext`lc, $CellContext`ub], 
+    $CellContext`r[$CellContext`la, $CellContext`uc]],
+   Editable->False]}]], "Output",
+ CellChangeTimes->{3.775028771786932*^9, 3.7750289015417757`*^9, 
+  3.827051837136883*^9, 3.91596349781715*^9, 3.9182957795072594`*^9},
+ CellLabel->
+  "Out[265]=",ExpressionUUID->"d01ee719-fa47-3940-9f77-a7a32d99de98"],
+
+Cell[BoxData[
+ RowBox[{
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      SubscriptBox["\[PartialD]", "c"], 
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox["r", 
+         TemplateBox[{"d", "e", "a", 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], "b"}, 
+          "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+       $CellContext`r[$CellContext`ld, $CellContext`le, $CellContext`la, \
+$CellContext`ub], Editable -> False]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`BD[$CellContext`lc, 
+    $CellContext`r[$CellContext`ld, $CellContext`le, $CellContext`la, \
+$CellContext`ub]],
+   Editable->False], "-", 
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      SubscriptBox["\[PartialD]", "d"], 
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox["r", 
+         TemplateBox[{"c", "e", "a", 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], "b"}, 
+          "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+       $CellContext`r[$CellContext`lc, $CellContext`le, $CellContext`la, \
+$CellContext`ub], Editable -> False]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`BD[$CellContext`ld, 
+    $CellContext`r[$CellContext`lc, $CellContext`le, $CellContext`la, \
+$CellContext`ub]],
+   Editable->False], "+", 
+  InterpretationBox[
+   StyleBox[
+    TemplateBox[{
+      SubscriptBox["\[PartialD]", "e"], 
+      InterpretationBox[
+       StyleBox[
+        SubsuperscriptBox["r", 
+         TemplateBox[{"c", "d", "a", 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False]}, 
+          "RowDefault"], 
+         TemplateBox[{
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+           StyleBox["1", ShowContents -> False, StripOnInput -> False], "b"}, 
+          "RowDefault"]], AutoSpacing -> False, ShowAutoStyles -> False], 
+       $CellContext`r[$CellContext`lc, $CellContext`ld, $CellContext`la, \
+$CellContext`ub], Editable -> False]},
+     "RowDefault"],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   mTensor`BD[$CellContext`le, 
+    $CellContext`r[$CellContext`lc, $CellContext`ld, $CellContext`la, \
+$CellContext`ub]],
+   Editable->False], "-", 
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["r", 
+      TemplateBox[{"d", "e", "f", 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], "b"},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`r[$CellContext`ld, $CellContext`le, $CellContext`lf, \
+$CellContext`ub],
+    Editable->False], " ", 
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["\[Omega]", 
+      TemplateBox[{"c", "a", 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], "f"},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`\[Omega][$CellContext`lc, $CellContext`la, $CellContext`uf],
+    Editable->False]}], "+", 
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["r", 
+      TemplateBox[{"d", "e", "a", 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], "f"},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`r[$CellContext`ld, $CellContext`le, $CellContext`la, \
+$CellContext`uf],
+    Editable->False], " ", 
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["\[Omega]", 
+      TemplateBox[{"c", "f", 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], "b"},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`\[Omega][$CellContext`lc, $CellContext`lf, $CellContext`ub],
+    Editable->False]}], "+", 
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["r", 
+      TemplateBox[{"c", "e", "f", 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], "b"},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`r[$CellContext`lc, $CellContext`le, $CellContext`lf, \
+$CellContext`ub],
+    Editable->False], " ", 
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["\[Omega]", 
+      TemplateBox[{"d", "a", 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], "f"},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`\[Omega][$CellContext`ld, $CellContext`la, $CellContext`uf],
+    Editable->False]}], "-", 
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["r", 
+      TemplateBox[{"c", "e", "a", 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], "f"},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`r[$CellContext`lc, $CellContext`le, $CellContext`la, \
+$CellContext`uf],
+    Editable->False], " ", 
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["\[Omega]", 
+      TemplateBox[{"d", "f", 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], "b"},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`\[Omega][$CellContext`ld, $CellContext`lf, $CellContext`ub],
+    Editable->False]}], "-", 
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["r", 
+      TemplateBox[{"c", "d", "f", 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], "b"},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`r[$CellContext`lc, $CellContext`ld, $CellContext`lf, \
+$CellContext`ub],
+    Editable->False], " ", 
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["\[Omega]", 
+      TemplateBox[{"e", "a", 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], "f"},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`\[Omega][$CellContext`le, $CellContext`la, $CellContext`uf],
+    Editable->False]}], "+", 
+  RowBox[{
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["r", 
+      TemplateBox[{"c", "d", "a", 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], "f"},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`r[$CellContext`lc, $CellContext`ld, $CellContext`la, \
+$CellContext`uf],
+    Editable->False], " ", 
+   InterpretationBox[
+    StyleBox[
+     SubsuperscriptBox["\[Omega]", 
+      TemplateBox[{"e", "f", 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False]},
+       "RowDefault"], 
+      TemplateBox[{
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], 
+        StyleBox["1", ShowContents -> False, StripOnInput -> False], "b"},
+       "RowDefault"]],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`\[Omega][$CellContext`le, $CellContext`lf, $CellContext`ub],
+    Editable->False]}]}]], "Output",
+ CellChangeTimes->{3.775028771786932*^9, 3.7750289015417757`*^9, 
+  3.827051837136883*^9, 3.91596349781715*^9, 3.918295779538563*^9},
+ CellLabel->
+  "Out[266]=",ExpressionUUID->"0a9932d2-bdf2-a545-8516-327fc120ddbd"]
+}, Open  ]],
+
+Cell[TextData[{
+ "torsion-free\:c77c \:b54c\:c5d0\:b294 ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["\[Del]", 
+      RowBox[{"[", "c"}]], 
+     SuperscriptBox[
+      SubscriptBox["r", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"d", "\[InvisibleSpace]", "e"}], "]"}], "a"}]], "b"]}], "=", 
+    "0"}], TraditionalForm]],ExpressionUUID->
+  "760c9b74-f70d-48fd-8e4c-395fcc69c584"],
+ "\:c774 \:b41c\:b2e4."
+}], "Text",
+ CellChangeTimes->{{3.827051869677416*^9, 3.827051905228188*^9}, 
+   3.9159635438688183`*^9, {3.9182958020357456`*^9, 3.9182958033174458`*^9}, {
+   3.918295886180559*^9, 
+   3.9182959028125076`*^9}},ExpressionUUID->"89af8b12-99cb-4997-90a9-\
+5ba0291750d0"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["6.4 Structure Equations in Euclidean Space", "Subsection",
+ CellChangeTimes->{{3.775028933853132*^9, 3.775028945620786*^9}, {
+   3.775029057780998*^9, 3.7750290601812744`*^9}, {3.775039680996453*^9, 
+   3.775039682492461*^9}, {3.819801975432977*^9, 3.819801978526739*^9}, 
+   3.9182959113251896`*^9},ExpressionUUID->"ab26987d-7966-4a16-8544-\
+e74ed59cbb1a"],
+
+Cell[TextData[{
+ StyleBox["No",
+  FontColor->RGBColor[1, 0, 0]],
+ StyleBox[" MatrixMap[] and MatrixXP[].",
+  FontColor->GrayLevel[0]]
+}], "Text",
+ CellChangeTimes->{{3.7750290286456637`*^9, 
+  3.7750290455097213`*^9}},ExpressionUUID->"321b4c13-ab16-439d-b69a-\
+1c499f56f12c"]
+}, Closed]]
+}, Open  ]]
+},
+WindowSize->{888, 671.25},
+WindowMargins->{{-900, Automatic}, {Automatic, 0}},
+SpellingDictionaries->{"CorrectWords"->{
+ "\:cca8\:c790", "\:be44\:c559\:d0a4", "\:d37c\:d150\:c15c"}},
+FrontEndVersion->"14.0 \:c758 Microsoft Windows (64-bit) (December 12, 2023)",
+StyleDefinitions->FrontEnd`FileName[{"Report"}, "StandardReport.nb", 
+  CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"cbc5b20c-4642-4afe-b318-9a5f68335293"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 254, 5, 49, "Input",ExpressionUUID->"bf7371f8-dc40-42da-adfa-c4c103b09334"],
+Cell[CellGroupData[{
+Cell[837, 29, 112, 0, 86, "Section",ExpressionUUID->"6f3e96e3-9ce9-4746-a98d-a5661afc131c"],
+Cell[CellGroupData[{
+Cell[974, 33, 173, 3, 42, "Subsection",ExpressionUUID->"8dc33e74-5cc7-4d56-88bf-9548739f2598"],
+Cell[1150, 38, 216, 4, 49, "Input",ExpressionUUID->"0a174b9c-1241-4f57-9795-5564688a4f2b"],
+Cell[1369, 44, 148, 2, 42, "Text",ExpressionUUID->"a2fc8a0e-70a3-4d17-ad2f-afbcd3dd6a12"],
+Cell[1520, 48, 266, 5, 49, "Input",ExpressionUUID->"e117c5b6-31e4-4119-818c-d95f100a4bd1"],
+Cell[1789, 55, 233, 5, 49, "Input",ExpressionUUID->"3c453c9c-a3a5-481b-ad9e-5b3e9d9ce9de"],
+Cell[CellGroupData[{
+Cell[2047, 64, 315, 7, 73, "Input",ExpressionUUID->"a92b24ea-fa2f-8c4f-b519-607b9216a199"],
+Cell[2365, 73, 320, 10, 66, "Output",ExpressionUUID->"fba613d0-897f-6f44-94db-c5466dbe77b5"],
+Cell[2688, 85, 1421, 50, 67, "Output",ExpressionUUID->"1853657a-8bff-f841-8f9f-6a3295d37177"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4146, 140, 441, 10, 73, "Input",ExpressionUUID->"2e248bc1-6777-475c-8955-c806d28aa9b2"],
+Cell[4590, 152, 740, 21, 66, "Output",ExpressionUUID->"ebcb95b0-9b77-dc43-b082-629f5f50c04e"],
+Cell[5333, 175, 2408, 69, 70, "Output",ExpressionUUID->"40e8e482-ac73-f641-bbd3-b5e9a903a258"]
+}, Open  ]],
+Cell[7756, 247, 151, 3, 42, "Text",ExpressionUUID->"c183d911-5e48-493b-bde0-9ec84b7782ee"],
+Cell[7910, 252, 263, 5, 49, "Input",ExpressionUUID->"9fadcf1d-32bf-4eb7-9e68-e2079751884b"],
+Cell[CellGroupData[{
+Cell[8198, 261, 324, 7, 73, "Input",ExpressionUUID->"12506d6c-1b0e-e943-a8fb-b292af2144c5"],
+Cell[8525, 270, 322, 10, 66, "Output",ExpressionUUID->"5430a1a0-bffa-9b4d-958d-a1d07bbf8142"],
+Cell[8850, 282, 2045, 73, 67, "Output",ExpressionUUID->"dbbdd6fb-4259-294d-abb0-6cfd9b636438"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10932, 360, 455, 10, 73, "Input",ExpressionUUID->"a7b2a1ac-e619-45e5-bdf2-646fb107499b"],
+Cell[11390, 372, 667, 20, 66, "Output",ExpressionUUID->"0ee93319-ae5f-6f45-8017-1bfcda9feea6"],
+Cell[12060, 394, 6790, 197, 70, "Output",ExpressionUUID->"3951f4d5-cf6e-bd4e-8e4d-78f0357f6f4e"]
+}, Open  ]],
+Cell[18865, 594, 233, 5, 49, "Input",ExpressionUUID->"dc9c8af2-3b88-48c5-a4f3-44aee1d0b355"],
+Cell[CellGroupData[{
+Cell[19123, 603, 324, 7, 73, "Input",ExpressionUUID->"d31e506c-dfdd-1b40-bc01-eaa9515240a8"],
+Cell[19450, 612, 322, 10, 66, "Output",ExpressionUUID->"e1febabe-f919-e448-a889-693774853c0f"],
+Cell[19775, 624, 3977, 118, 67, "Output",ExpressionUUID->"e487611e-c585-1242-9405-d4886d25533e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23789, 747, 453, 10, 73, "Input",ExpressionUUID->"217aac6b-6b05-494d-b1e4-b742fdfd3b26"],
+Cell[24245, 759, 692, 20, 66, "Output",ExpressionUUID->"345dfd81-8112-5144-9a59-3ccced5f56b4"],
+Cell[24940, 781, 3522, 96, 70, "Output",ExpressionUUID->"e16a353a-926f-104a-b49e-c10585748a47"]
+}, Open  ]],
+Cell[28477, 880, 215, 4, 49, "Input",ExpressionUUID->"022c8dbb-a281-4d5f-a428-2761f35063c7"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[28729, 889, 264, 5, 41, "Subsection",ExpressionUUID->"c92c3210-5973-4f90-aa89-4f5d2c445917"],
+Cell[28996, 896, 239, 5, 42, "Text",ExpressionUUID->"f054c7ee-6be6-4ea3-94a7-d6a5309b3835"],
+Cell[29238, 903, 349, 9, 49, "Input",ExpressionUUID->"28c3bf5a-2459-4969-bc18-baaba642d828"],
+Cell[CellGroupData[{
+Cell[29612, 916, 445, 13, 70, "Input",ExpressionUUID->"b013d2eb-aabf-4cc8-b145-b189a8bdfe40"],
+Cell[30060, 931, 1360, 38, 88, "Output",ExpressionUUID->"ceff9a82-c7b0-eb48-bec0-365254cc0893"]
+}, Open  ]],
+Cell[31435, 972, 250, 5, 42, "Text",ExpressionUUID->"f3411794-eb7a-4dc8-82a4-0c886af1ecf6"],
+Cell[31688, 979, 340, 9, 49, "Input",ExpressionUUID->"e9d4f417-556e-469f-81d9-98382806d9ac"],
+Cell[CellGroupData[{
+Cell[32053, 992, 420, 9, 73, "Input",ExpressionUUID->"cd41753b-9b88-430e-82cd-baea1e2da472"],
+Cell[32476, 1003, 689, 19, 66, "Output",ExpressionUUID->"1fdbbef4-43fb-a343-9baf-6bed97b9498f"],
+Cell[33168, 1024, 975, 24, 68, "Output",ExpressionUUID->"ab066fed-9463-084b-8f34-ba1be1e37c95"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[34180, 1053, 536, 14, 96, "Input",ExpressionUUID->"0470ec50-085f-4de2-aa94-df115978c3dd"],
+Cell[34719, 1069, 981, 31, 86, "Output",ExpressionUUID->"f0e477fb-ba29-944a-8188-b175c9020064"],
+Cell[35703, 1102, 1423, 40, 88, "Output",ExpressionUUID->"d8a9f09f-91c6-ef46-9d9c-f9d84a6f40c0"]
+}, Open  ]],
+Cell[37141, 1145, 281, 5, 42, "Text",ExpressionUUID->"4526badb-42b3-49f5-8e47-d0be0d57c835"],
+Cell[CellGroupData[{
+Cell[37447, 1154, 628, 16, 73, "Input",ExpressionUUID->"4d24cff2-ea3a-43bb-825c-381e592365a9"],
+Cell[38078, 1172, 5005, 132, 83, "Output",ExpressionUUID->"88f72749-d762-3047-9465-1b300ea25614"],
+Cell[43086, 1306, 2461, 63, 67, "Output",ExpressionUUID->"ce036751-4dd4-eb45-9b09-db0880e78d80"]
+}, Open  ]],
+Cell[45562, 1372, 291, 5, 42, "Text",ExpressionUUID->"38f7aa74-0dbe-4dbc-a303-7257791c6d1b"],
+Cell[CellGroupData[{
+Cell[45878, 1381, 450, 10, 73, "Input",ExpressionUUID->"44ff3526-79db-49cb-a4ec-f257dd918236"],
+Cell[46331, 1393, 688, 20, 66, "Output",ExpressionUUID->"6827dda8-8da3-c04e-af1a-863862fd1404"],
+Cell[47022, 1415, 2406, 62, 67, "Output",ExpressionUUID->"b67f84bc-06c0-f345-8764-2e47eb9eecc7"]
+}, Open  ]],
+Cell[49443, 1480, 251, 5, 42, "Text",ExpressionUUID->"a170e933-bc79-4495-951b-1f9083dcbc77"],
+Cell[49697, 1487, 231, 5, 49, "Input",ExpressionUUID->"b0c4980a-21e3-4870-9814-64e07bc511dd"],
+Cell[CellGroupData[{
+Cell[49953, 1496, 495, 12, 73, "Input",ExpressionUUID->"cefc09d7-a0d5-48c6-9668-fe6876503755"],
+Cell[50451, 1510, 880, 28, 66, "Output",ExpressionUUID->"f4f03469-d556-db46-87fc-165b70b53631"],
+Cell[51334, 1540, 1926, 55, 67, "Output",ExpressionUUID->"b5e3a5a1-39f0-ca4a-b897-b9c257b50226"]
+}, Open  ]],
+Cell[53275, 1598, 308, 5, 42, "Text",ExpressionUUID->"03b31262-1d74-4158-8bd5-4a405579e2b4"],
+Cell[CellGroupData[{
+Cell[53608, 1607, 413, 9, 73, "Input",ExpressionUUID->"355d19b6-aa18-4b95-a6c1-44d92257ec44"],
+Cell[54024, 1618, 713, 21, 66, "Output",ExpressionUUID->"d8d16b30-eb8e-024c-a364-b29eec96f96a"],
+Cell[54740, 1641, 2431, 63, 67, "Output",ExpressionUUID->"025b9fef-32ed-984d-aef1-32a34a54068d"]
+}, Open  ]],
+Cell[57186, 1707, 264, 5, 42, "Text",ExpressionUUID->"8a8dd067-8537-43c3-9057-2a2498be5dac"],
+Cell[CellGroupData[{
+Cell[57475, 1716, 343, 8, 49, "Input",ExpressionUUID->"b8560e16-8386-4aaf-bd7d-546f0801b9d0"],
+Cell[57821, 1726, 1324, 40, 86, "Output",ExpressionUUID->"2d3f1fb0-6e7f-7e4b-af7c-a60f654971f9"]
+}, Open  ]],
+Cell[59160, 1769, 169, 3, 42, "Text",ExpressionUUID->"e72a626d-7eeb-4faf-8b86-6a0dd2007a8c"],
+Cell[CellGroupData[{
+Cell[59354, 1776, 447, 10, 73, "Input",ExpressionUUID->"e5f7b68d-2d2f-4898-87e3-fea6bb71caad"],
+Cell[59804, 1788, 723, 20, 66, "Output",ExpressionUUID->"1a73b3ad-3240-254d-8b51-f37906b67920"],
+Cell[60530, 1810, 897, 24, 67, "Output",ExpressionUUID->"e4e978fe-55de-344c-a5a1-16ccceb7e2e0"]
+}, Open  ]],
+Cell[61442, 1837, 299, 5, 42, "Text",ExpressionUUID->"01bdd3a1-69e7-4d94-b17c-896e134780ed"],
+Cell[CellGroupData[{
+Cell[61766, 1846, 609, 16, 96, "Input",ExpressionUUID->"b6c35942-188b-45b9-a89c-c1a91263fc82"],
+Cell[62378, 1864, 2182, 64, 86, "Output",ExpressionUUID->"42f88e1a-504c-1242-b171-93a2204ee3ce"],
+Cell[64563, 1930, 3603, 100, 88, "Output",ExpressionUUID->"80db5c5b-d63c-e647-bcfc-2978bcc4c98b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[68203, 2035, 205, 4, 49, "Input",ExpressionUUID->"16b05074-2411-4d91-bee5-e050cb392c1c"],
+Cell[68411, 2041, 3535, 99, 88, "Output",ExpressionUUID->"f96797b9-e94c-1e44-a183-46042303c6eb"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[71983, 2145, 532, 14, 49, "Input",ExpressionUUID->"a72e943b-c9d9-4811-9ac2-6840f1925f4c"],
+Cell[72518, 2161, 2110, 61, 68, "Output",ExpressionUUID->"4110387c-ff6d-7347-807b-0a38d41f7ad2"]
+}, Open  ]],
+Cell[74643, 2225, 308, 5, 42, "Text",ExpressionUUID->"282db59b-367f-408b-bafe-4e16931bcc93"],
+Cell[CellGroupData[{
+Cell[74976, 2234, 214, 4, 49, "Input",ExpressionUUID->"e5158c8c-48ae-455b-b568-b6c464416ab8"],
+Cell[75193, 2240, 2438, 72, 88, "Output",ExpressionUUID->"328bc3e2-83a1-004b-83d9-50b6025442b7"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[77680, 2318, 201, 3, 41, "Subsection",ExpressionUUID->"0cf84f52-e7c1-45bb-8653-e41b4a4ca765"],
+Cell[77884, 2323, 239, 6, 42, "Text",ExpressionUUID->"f5d26f8c-c155-44b5-9076-30493155b819"],
+Cell[78126, 2331, 728, 20, 73, "Input",ExpressionUUID->"04bd21d9-c83c-4113-b217-b37b42548fad"],
+Cell[CellGroupData[{
+Cell[78879, 2355, 499, 12, 73, "Input",ExpressionUUID->"90096fdf-66cf-404a-be60-72bf813e4d97"],
+Cell[79381, 2369, 1321, 36, 68, "Output",ExpressionUUID->"9b5a7078-828f-d746-85cc-30dc5e1115f8"],
+Cell[80705, 2407, 2107, 62, 68, "Output",ExpressionUUID->"97233e84-f304-c445-9ac2-e035a07d4f53"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[82849, 2474, 417, 10, 73, "Input",ExpressionUUID->"3a2eeb3a-cd31-4a17-bd7b-200817c86f06"],
+Cell[83269, 2486, 720, 20, 68, "Output",ExpressionUUID->"b64299e8-f2f6-0545-a8cf-15bc0caabaf4"],
+Cell[83992, 2508, 862, 21, 68, "Output",ExpressionUUID->"58797b75-dfda-2f4e-953a-66b186e2deb3"]
+}, Open  ]],
+Cell[84869, 2532, 147, 3, 42, "Text",ExpressionUUID->"24d5a7bc-d7a8-4790-b7d7-40bcf3bb0ae3"],
+Cell[85019, 2537, 565, 15, 42, "Text",ExpressionUUID->"e4663d94-a8df-7941-b160-8b8af43d0c71"],
+Cell[CellGroupData[{
+Cell[85609, 2556, 650, 15, 49, "Input",ExpressionUUID->"4d6c109d-29fe-4ca7-8b3d-a44ae6dca3d7"],
+Cell[86262, 2573, 2618, 74, 68, "Output",ExpressionUUID->"5aa34b5a-97dc-1848-a62e-db27860ef1c5"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[88917, 2652, 674, 16, 49, "Input",ExpressionUUID->"fd4e1da1-ad06-4b98-bfca-5f97ea52a52c"],
+Cell[89594, 2670, 2970, 82, 71, "Output",ExpressionUUID->"71caa30a-6e37-7a46-9957-66babc2d65c0"]
+}, Open  ]],
+Cell[92579, 2755, 199, 4, 42, "Text",ExpressionUUID->"4d7b52fb-b639-4a31-ad48-5e3009d8d80c"],
+Cell[92781, 2761, 728, 21, 43, "Text",ExpressionUUID->"2b695a42-f35f-db4a-9161-8860a02dcc3c"],
+Cell[CellGroupData[{
+Cell[93534, 2786, 849, 19, 49, "Input",ExpressionUUID->"3c2828a1-f9a3-458a-9e1f-83a7f85af149"],
+Cell[94386, 2807, 3010, 79, 68, "Output",ExpressionUUID->"f363de0d-c8c2-6149-8a83-1db45a0ee770"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[97433, 2891, 944, 22, 49, "Input",ExpressionUUID->"347921c3-0934-46f2-be56-e7fad83c6e1f"],
+Cell[98380, 2915, 3581, 93, 71, "Output",ExpressionUUID->"52add9d4-e5c4-494b-a847-9796f5211425"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[101998, 3013, 273, 6, 49, "Input",ExpressionUUID->"907df90b-162c-410c-885e-44fde1f14e8f"],
+Cell[102274, 3021, 6596, 172, 99, "Output",ExpressionUUID->"b283ed75-169b-624b-b6f7-c09a0e31529e"]
+}, Open  ]],
+Cell[108885, 3196, 239, 4, 42, "Text",ExpressionUUID->"1d58fec1-04c7-4751-822f-79100fe09d8e"],
+Cell[109127, 3202, 728, 20, 42, "Text",ExpressionUUID->"40f84998-a820-7f4f-bae2-df1e7100d75a"],
+Cell[CellGroupData[{
+Cell[109880, 3226, 472, 10, 97, "Input",ExpressionUUID->"897a066b-7579-4f02-ab3b-ce967cedf5d6"],
+Cell[110355, 3238, 4466, 116, 68, "Output",ExpressionUUID->"8ed730f2-f368-ec42-b5d1-a1db399b5476"],
+Cell[114824, 3356, 3595, 94, 68, "Output",ExpressionUUID->"e6e6697b-db0d-ab4d-911c-8e88d86cf832"],
+Cell[118422, 3452, 9538, 253, 71, "Output",ExpressionUUID->"ea8bb840-6ac1-da4d-b486-dd88d773610a"]
+}, Open  ]],
+Cell[127975, 3708, 291, 5, 42, "Text",ExpressionUUID->"f120dfcb-29d5-4071-9bd9-630d4dcd7998"],
+Cell[128269, 3715, 761, 22, 42, "Text",ExpressionUUID->"bcbdd06b-2e95-5f4c-99ec-e8699b07c694"],
+Cell[CellGroupData[{
+Cell[129055, 3741, 322, 6, 73, "Input",ExpressionUUID->"13543d96-5049-4e79-a6a1-aaf628ebc528"],
+Cell[129380, 3749, 4656, 119, 68, "Output",ExpressionUUID->"178b8f7c-0711-ed4f-bb4a-d5ffbe612cca"],
+Cell[134039, 3870, 3708, 95, 68, "Output",ExpressionUUID->"35dbad17-2ef6-be44-8c8a-4500e7ba6b7a"]
+}, Open  ]],
+Cell[137762, 3968, 223, 5, 49, "Input",ExpressionUUID->"e940a0de-3050-441d-867e-ebbc4f223c4d"],
+Cell[137988, 3975, 199, 4, 42, "Text",ExpressionUUID->"aa646a9b-60ac-4827-8328-bda49df1864e"],
+Cell[138190, 3981, 216, 4, 49, "Input",ExpressionUUID->"97bc8b6f-4272-4134-b29f-e81eaeb62a61"],
+Cell[CellGroupData[{
+Cell[138431, 3989, 375, 8, 73, "Input",ExpressionUUID->"d6f2bdb6-ceb3-40fb-b3ea-696bd48b4248"],
+Cell[138809, 3999, 2904, 78, 68, "Output",ExpressionUUID->"40eeabde-0961-9a4f-8755-1f2ed62880aa"],
+Cell[141716, 4079, 4773, 123, 68, "Output",ExpressionUUID->"67780100-936e-8e4a-9e3f-b238d21c78f0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[146526, 4207, 300, 6, 49, "Input",ExpressionUUID->"65c85098-b5de-455b-b288-b18d03be4aeb"],
+Cell[146829, 4215, 4234, 108, 68, "Output",ExpressionUUID->"d839cd5f-42e0-a44d-9e33-b5febe56b232"]
+}, Open  ]],
+Cell[151078, 4326, 976, 29, 43, "Text",ExpressionUUID->"26d20216-53c6-4037-9b0c-dca0d2d95827"],
+Cell[CellGroupData[{
+Cell[152079, 4359, 384, 8, 73, "Input",ExpressionUUID->"488e82a4-fc08-4890-8ad7-0193bebdd7e8"],
+Cell[152466, 4369, 3731, 95, 68, "Output",ExpressionUUID->"d01ee719-fa47-3940-9f77-a7a32d99de98"],
+Cell[156200, 4466, 10213, 263, 69, "Output",ExpressionUUID->"0a9932d2-bdf2-a545-8516-327fc120ddbd"]
+}, Open  ]],
+Cell[166428, 4732, 706, 21, 42, "Text",ExpressionUUID->"89af8b12-99cb-4997-90a9-5ba0291750d0"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[167171, 4758, 363, 5, 41, "Subsection",ExpressionUUID->"ab26987d-7966-4a16-8544-e74ed59cbb1a"],
+Cell[167537, 4765, 275, 8, 42, "Text",ExpressionUUID->"321b4c13-ab16-439d-b69a-1c499f56f12c"]
+}, Closed]]
+}, Open  ]]
+}
+]
+*)
+
